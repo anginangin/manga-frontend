@@ -60,7 +60,7 @@
         <div id="header" class="header-reader">
             <div class="container">
                 <div class="auto-div">
-                    <a href="/" id="logo" class="mr-0">
+                    <a href="/" id="logo" class="mr-0" style="height: auto;">
                         <img src="{{ config('constant.url.backend').'/logo/'.$web['icon'] }}" alt="logo" class="img-fluid" style="max-height: 60px; margin-top: auto">
                         <div class="clearfix"></div>
                     </a>
@@ -155,6 +155,12 @@
                                 <i class="far fa-comment-alt"></i>
                                 <span class="number">{{ count($komen) }}</span>
                                 <span class="hrr-name">Komentar</span>
+                            </a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="hr-informasi mr-2">
+                            <a href="{{ route('detail', $chapter->manga['slug']) }}" class="btn btn-sm hrr-btn">
+                                <i class="far fa-info"></i>
                             </a>
                             <div class="clearfix"></div>
                         </div>

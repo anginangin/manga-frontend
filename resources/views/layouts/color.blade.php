@@ -4825,6 +4825,13 @@
         float: left;
     }
 
+    .hr-informasi {
+        float: left;
+    }
+    .hr-info {
+        float: left;
+    }
+
     .hr-fav {
         float: left;
     }
@@ -6057,7 +6064,14 @@
     .hr-comment .number {
         display: none;
     }
+    .hr-info .number {
+        display: none;
+    }
 
+
+    .hr-informasi .number {
+        display: none;
+    }
     .sc-dt-rate {
         position: absolute;
         top: calc(50% - 60px);
@@ -9700,6 +9714,16 @@
             color: {{ $setTheme->button_color }};
         }
 
+        #header.header-reader .hr-informasi i:before {
+            font-weight: 900;
+            color: #fff !important;
+        }
+
+        #header.header-reader .hr-info i:before {
+            font-weight: 900;
+            color: #fff !important;
+        }
+
         body.darkmode .chapter-list-read .chapter-section {
             background-color: #222 !important;
         }
@@ -12090,10 +12114,22 @@
             width: 100%;
         }
 
+        #header.header-reader .hr-informasi {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            width: 100%;
+        }
+
         body.darkmode #header.header-reader .hr-comment {
             background: rgba(0, 0, 0, 0.1) !important;
         }
 
+        body.darkmode #header.header-reader .hr-informasi {
+            background: rgba(0, 0, 0, 0.1) !important;
+        }
         #header.header-reader .hr-comment i {
             font-size: 36px;
             width: 40px !important;
@@ -12102,7 +12138,22 @@
             color: {{ $setTheme->button_color }};
         }
 
+        #header.header-reader .hr-informasi i {
+            font-size: 36px;
+            width: 40px !important;
+            margin-right: 10px;
+            float: left;
+            color: #fff !important;
+        }
+
+
         #header.header-reader .hr-comment span.number {
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: 700;
+            display: block;
+        }
+        #header.header-reader .hr-informasi span.number {
             font-size: 20px;
             line-height: 20px;
             font-weight: 700;
@@ -12116,11 +12167,22 @@
             line-height: 1;
         }
 
+        #header.header-reader .hr-informasi .btn .hrr-name {
+            margin: 0;
+            position: absolute;
+            top: 37px;
+            line-height: 1;
+        }
+
         .hr-right .hrr-btn .hrr-name {
             display: inline-block;
         }
 
         .hr-comment .btn .hrr-name {
+            margin-left: 0;
+        }
+
+        .hr-informasi .btn .hrr-name {
             margin-left: 0;
         }
 
@@ -12500,13 +12562,13 @@
     }
 
 
-    @media screen and (max-width: 760px) {
+    /* @media screen and (max-width: 760px) {
         #header #logo img {
             height: auto;
             width: 100%;
             float: left;
         }
-    }
+    } */
     /* @media screen and (max-width: 480px) {
         #logo .logo-read
         {
