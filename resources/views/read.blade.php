@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
     @include('layouts.color')
-    
+
     <style>
         .headpost,
         #content.readercontent .bixbox,
@@ -61,11 +61,11 @@
             <div class="container">
                 <div class="auto-div">
                     <a href="/" id="logo" class="mr-0">
-                        <img src="{{ config('constant.url.backend').'/logo/'.$web['icon'] }}" alt="logo" class="img-fluid" style="max-height: 60px">
+                        <img src="{{ config('constant.url.backend').'/logo/'.$web['icon'] }}" alt="logo" class="img-fluid" style="max-height: 60px; margin-top: auto">
                         <div class="clearfix"></div>
                     </a>
                     <div class="hr-line"></div>
-                    <a href="#" class="hr-manga">
+                    <a href="{{ route('detail', $chapter->manga['slug']) }}" class="hr-manga">
                         <h2 class="manga-name">
                             {{ $chapter->manga['title'] }}
                         </h2>

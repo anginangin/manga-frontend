@@ -11533,7 +11533,7 @@
         #header.header-reader #logo {
             height: 40px;
             width: 40px;
-            margin: 5px 0 5px 0;
+            /* margin: 5px 0 5px 0; */
             position: relative;
         }
 
@@ -11918,9 +11918,9 @@
     }
 
     @media screen and (max-width: 340px) {
-        .hr-navigation .rt-item .btn i {
+        /* .hr-navigation .rt-item .btn i {
             display: none;
-        }
+        } */
 
         .chapter-list-read .chapters-list-ul ul .item {
             width: calc(50% - 4px);
@@ -12498,4 +12498,19 @@
         right: 0px;
         display: block;
     }
+
+
+    @media screen and (max-width: 760px) {
+        #header #logo img {
+            height: auto;
+            width: 100%;
+            float: left;
+        }
+    }
+    /* @media screen and (max-width: 480px) {
+        #logo .logo-read
+        {
+            margin-top: 12px;
+        }
+    } */
 </style>
