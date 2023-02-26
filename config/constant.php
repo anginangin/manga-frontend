@@ -1,7 +1,7 @@
 <?php
 return [
     'url' => [
-        'backend'       => 'https://scrape.my-project.website',
+        'backend'       => 'https://bends.mangapaws.com',
         'api_image'     => 'https://cdnimage.dev/',
         'kiryuu'        => 'https://kiryuu.id',
         'komikstation'  => 'https://komikstation.co',
