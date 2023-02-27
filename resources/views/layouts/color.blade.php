@@ -11348,7 +11348,7 @@
 
         .deslide-item .deslide-poster {
             width: 180px;
-            right: -35px;
+            right: 0px;
             top: -20px !important;
         }
 
@@ -11908,7 +11908,7 @@
         .deslide-item .deslide-poster {
             width: 160px;
             right: auto;
-            left: 240px;
+            left: 190px;
             top: -20px !important;
         }
 

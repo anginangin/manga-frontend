@@ -14,13 +14,16 @@
     {!! App\Models\SEO::select('meta_tag')->first()->meta_tag !!}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     @php
-        $web            = App\Models\Web::first();
-        $setTheme       = \DB::table('web_setting')->join('theme_colors', 'theme_colors.id', '=', 'web_setting.theme_id')->first();
-        $bannerAtas     = App\Models\Banner::where(['posisi' => 'Atas', 'status' => 0])->get();
+        $web = App\Models\Web::first();
+        $setTheme = \DB::table('web_setting')
+            ->join('theme_colors', 'theme_colors.id', '=', 'web_setting.theme_id')
+            ->first();
+        $bannerAtas = App\Models\Banner::where(['posisi' => 'Atas', 'status' => 0])->get();
     @endphp
 
     @include('includes.style')
@@ -39,7 +42,8 @@
         <div class="text-center mb-3">
             @foreach ($bannerAtas as $bannerAtas)
                 <a href="{{ $bannerAtas->link }}" target="_blank">
-                    <img src="{{ config('constant.url.backend').'/banner/'.$bannerAtas->gambar }}" class="img-fluid" alt="">
+                    <img src="{{ config('constant.url.backend') . '/banner/' . $bannerAtas->gambar }}" class="img-fluid"
+                        alt="">
                 </a>
             @endforeach
         </div>

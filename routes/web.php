@@ -7,13 +7,14 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MangaListController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ReadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/mangajob', [DetailController::class, 'mangajob']);
-Route::get('/config-cache', function(){
+Route::get('/config-cache', function () {
     \Artisan::call('config:cache');
 });
 Route::get('error-page', function () {
@@ -66,3 +67,5 @@ Route::get('sign-up', [AuthController::class, 'signUp'])->name('sign-up');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/read/{slug}', [ReadController::class, 'index'])->name('read');
+
+Route::get('/pages/{slug}', [PageController::class, 'index'])->name('pages');
