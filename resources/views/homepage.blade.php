@@ -8,26 +8,26 @@
                 <div class="swiper-slide">
                     <div class="deslide-item">
                         <a href="{{ route('detail', $slider['slug']) }}" class="deslide-cover">
-                            <img 
-                                class="manga-poster-img" 
-                                src="{{ 
-                                    (!$slider['thumbnail']) 
-                                    ? $slider['poster'] 
-                                    : config('constant.url.api_image').$slider['thumbnail'] 
+                            <img
+                                class="manga-poster-img"
+                                src="{{
+                                    (!$slider['thumbnail'])
+                                    ? $slider['poster']
+                                    : config('constant.url.api_image').$slider['thumbnail']
                                 }}"
-                                alt="{{ $slider['title'] }}" 
+                                alt="{{ $slider['title'] }}"
                             />
                         </a>
                         <div class="deslide-poster">
                             <a href="{{ route('detail', $slider['slug']) }}" class="manga-poster">
-                                <img 
-                                    src="{{ 
-                                        (!$slider['thumbnail']) 
-                                        ? $slider['poster'] 
-                                        : config('constant.url.api_image').$slider['thumbnail'] 
+                                <img
+                                    src="{{
+                                        (!$slider['thumbnail'])
+                                        ? $slider['poster']
+                                        : config('constant.url.api_image').$slider['thumbnail']
                                     }}"
-                                    class="manga-poster-img" 
-                                    alt="{{ $slider['title'] }}" 
+                                    class="manga-poster-img"
+                                    alt="{{ $slider['title'] }}"
                                 />
                             </a>
                         </div>
@@ -108,14 +108,14 @@
                                 <div class="item">
                                     <div class="manga-poster">
                                         <a class="link-mask" href="{{ route('detail', str_replace('/manga/','',$trending->slug)) }}"></a>
-                                            <img 
-                                                src="{{ 
-                                                    (!$trending->thumbnail) 
+                                            <img
+                                                src="{{
+                                                    (!$trending->thumbnail)
                                                     ? $trending->poster
-                                                    : config('constant.url.api_image').$trending->thumbnail 
+                                                    : config('constant.url.api_image').$trending->thumbnail
                                                 }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $trending->title }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $trending->title }}"
                                             />
                                     </div>
                                     <div class="number">
@@ -133,14 +133,14 @@
                                 <div class="item">
                                     <div class="manga-poster">
                                         <a class="link-mask" href="{{ route('detail', str_replace('/manga/','',$trending->manga->slug)) }}"></a>
-                                            <img 
-                                                src="{{ 
-                                                    (!$trending->manga->thumbnail) 
+                                            <img
+                                                src="{{
+                                                    (!$trending->manga->thumbnail)
                                                     ? $trending->manga->poster
-                                                    : config('constant.url.api_image').$trending->manga->thumbnail 
+                                                    : config('constant.url.api_image').$trending->manga->thumbnail
                                                 }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $trending->manga->title }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $trending->manga->title }}"
                                             />
                                     </div>
                                     <div class="number">
@@ -211,7 +211,7 @@
                                         <a class="link-mask"
                                             href="{{ route('detail', str_replace('/manga/','',$slider->manga['slug'])) }}"></a>
                                         <span class="tick tick-item tick-lang"></span>
-                                        <img src="{{ 
+                                        <img src="{{
                                                             (!$slider->manga['thumbnail'])
                                                             ? $slider->manga['poster']
                                                             : config('constant.url.api_image').$slider->manga['thumbnail'] }}"
@@ -319,7 +319,7 @@
                 <div class="clearfix"></div>
 
                 {{-- RILISAN TERBARU --}}
-                <section class="block_area block_area_home">
+                <section class="block_area block_area_home" style="position: initial !important;">
                     <div class="block_area-header block_area-header-tabs">
                         <div class="float-left bah-heading">
                             <h2 class="cat-heading">
@@ -338,14 +338,14 @@
                                             {{-- @if ($manga['updated_at']->isToday())
                                                 <span class="tick tick-item tick-lang">NEW</span>
                                             @endif --}}
-                                            <img 
-                                                src="{{ 
+                                            <img
+                                                src="{{
                                                     (!$manga['thumbnail'])
                                                     ? $manga['poster']
-                                                    : config('constant.url.api_image').$manga['thumbnail'] 
+                                                    : config('constant.url.api_image').$manga['thumbnail']
                                                 }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $manga['title'] }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $manga['title'] }}"
                                             />
                                         </a>
                                         <div class="manga-detail">
@@ -379,8 +379,8 @@
                                                         </a>
                                                     </div>
                                                     <div class="release-time">
-                                                        {{-- @if ($manga['updated_at']->isToday())    
-                                                            @if ($chapter['updated_at']->isToday())    
+                                                        {{-- @if ($manga['updated_at']->isToday())
+                                                            @if ($chapter['updated_at']->isToday())
                                                                 <span class="badge badge-warning">NEW</span>
                                                                 @endif
                                                                 @endif --}}
@@ -426,7 +426,7 @@
             </div>
 
             <br><br>
-            
+
             <section class="block_area block_area_featured">
                 <div class="block_area-header">
                     <div class="bah-heading">
@@ -446,13 +446,13 @@
                                         <div class="manga-poster">
                                             <a class="link-mask" href="{{ route('detail', str_replace('/manga/','',$recommended->manga['slug'])) }}"></a>
                                             <span class="tick tick-item tick-lang"></span>
-                                            <img 
-                                                src="{{ 
+                                            <img
+                                                src="{{
                                                     (!$recommended->manga['thumbnail'])
                                                     ? $recommended->manga['poster']
                                                     : config('constant.url.api_image').$recommended->manga['thumbnail'] }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $recommended->manga['title'] }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $recommended->manga['title'] }}"
                                             />
                                         </div>
                                         <div class="manga-detail">
