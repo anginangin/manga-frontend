@@ -50,7 +50,6 @@ class UpdateChapterCron extends Command
                 //         });
                 //     }
                 // } else {
-                    if ($node[$key]->filter('.clstyle')->filter('li')->count() > 0) {
                         $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
                             if ($i <= 2) {
                                 $data = [
@@ -60,7 +59,6 @@ class UpdateChapterCron extends Command
                                 return $data;
                             }
                         });
-                    }
                 // }
             }
             $informations = $this->information;
