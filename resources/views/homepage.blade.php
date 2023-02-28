@@ -427,7 +427,7 @@
 
             <br><br>
 
-            <section class="block_area block_area_featured">
+            <section class="block_area block_area_featured" style="position: initial">
                 <div class="block_area-header">
                     <div class="bah-heading">
                         <h2 class="cat-heading">
