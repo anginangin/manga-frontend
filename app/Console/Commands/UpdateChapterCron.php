@@ -29,37 +29,38 @@ class UpdateChapterCron extends Command
         $notifications  = [];
         $client         = new Client();
         $manga          = Manga::select('id', 'domain', 'slug')->with('chapters')->where('is_blacklist', 0)->get();
-
         // scraping ambil chapter terbaru
         foreach ($manga as $key => $value) {
             $domain[$key]   = $value['domain'];
             $url[$key]      = $value['domain'] . '/manga/' . $value['slug'];
             $node[$key]     = $client->request('GET', $url[$key]);
-
             $this->information[$key]['manga_id']        = $value['id'];
-
             if ($value['id'] == $this->information[$key]['manga_id']) {
-                if ($domain[$key] == config('constant.url.komikstation')) {
-                    $this->information[$key]['chapters']    = $node[$key]->filter('.bixbox ul')->filter('li')->each(function ($li, $i) {
-                        if ($i <= 2) {
-                            $data = [
-                                'cp'    => $li->filter('.lchx')->text(),
-                                'url'   => parse_url($li->filter('.lchx a')->attr('href'))
-                            ];
-                            return $data;
-                        }
-                    });
-                } else {
-                    $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
-                        if ($i <= 2) {
-                            $data = [
-                                'cp'    => $li->filter('.chapternum')->text(),
-                                'url'   => parse_url($li->filter('a')->attr('href'))
-                            ];
-                            return $data;
-                        }
-                    });
-                }
+                // if ($domain[$key] == config('constant.url.komikstation')) {
+                //     if ($node[$key]->filter('.bixbox ul')->filter('li')->count() > 0) {
+                //         $this->information[$key]['chapters']    = $node[$key]->filter('.bixbox ul')->filter('li')->each(function ($li, $i) {
+                //             if ($i <= 2) {
+                //                 $data = [
+                //                     'cp'    => $li->filter('.lchx')->text(),
+                //                     'url'   => parse_url($li->filter('.lchx a')->attr('href'))
+                //                 ];
+                //                 return $data;
+                //             }
+                //         });
+                //     }
+                // } else {
+                    if ($node[$key]->filter('.clstyle')->filter('li')->count() > 0) {
+                        $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
+                            if ($i <= 2) {
+                                $data = [
+                                    'cp'    => $li->filter('.chapternum')->text(),
+                                    'url'   => parse_url($li->filter('a')->attr('href'))
+                                ];
+                                return $data;
+                            }
+                        });
+                    }
+                // }
             }
             $informations = $this->information;
         }
@@ -83,7 +84,6 @@ class UpdateChapterCron extends Command
                 }
             }
         }
-
         // insert ke database
         DB::table('manga_chapter')->insertOrIgnore($chapters);
 
