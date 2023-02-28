@@ -22,6 +22,7 @@ class UpdateChapterCron extends Command
 
     public function handle()
     {
+        \Log::info('START UPDATE CHAPTER');
         $startTime = microtime(true);
 
         // inisialisasi
