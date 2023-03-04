@@ -17,7 +17,7 @@ class Manga extends Model
 
     public function chapters()
     {
-        return $this->hasMany('App\Models\Chapter', 'manga_id');
+        return $this->hasMany('App\Models\Chapter', 'manga_id')->orderBy('created_at','DESC');
     }
 
     public function bookmarks(){
