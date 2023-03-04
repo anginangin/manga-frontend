@@ -13,6 +13,10 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::get('shell-exec', function() {
+    chdir('..');
+    shell_exec('php artisan queue:work --stop-when-empty >> /dev/null 2>/dev/null &');
+});
 Route::get('/mangajob', [DetailController::class, 'mangajob']);
 Route::get('/config-cache', function () {
     \Artisan::call('config:cache');
