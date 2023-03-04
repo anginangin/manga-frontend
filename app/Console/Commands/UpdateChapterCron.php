@@ -34,6 +34,8 @@ class UpdateChapterCron extends Command
         $timeDiff = $endTime - $startTime;
 
         Log::info("Create Jobs Update Chapter -- " . sprintf('%0.2f', $timeDiff) . " detik");
+        chdir('..');
+        shell_exec('php artisan queue:work --stop-when-empty >> /dev/null 2>/dev/null &');
 
         // // inisialisasi
         // $chapters       = [];
