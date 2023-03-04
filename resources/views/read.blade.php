@@ -164,12 +164,12 @@
                             </a>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="hr-info mr-2">
+                        {{-- <div class="hr-info mr-2">
                             <a href="/manga/{{ $chapter->manga['slug'] }}" class="btn btn-sm hrr-btn"><i
                                     class="fas fa-info"></i><span class="hrr-name">Manga
                                     Detail</span></a>
                             <div class="clearfix"></div>
-                        </div>
+                        </div> --}}
                         <div class="hr-fav" id="reading-list-info"></div>
                     </div>
                     <div class="clearfix"></div>
