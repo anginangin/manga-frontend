@@ -33,7 +33,7 @@ class UpdateChapterCron extends Command
         $endTime = microtime(true);
         $timeDiff = $endTime - $startTime;
 
-        Log::info("Chapter Update Done -- " . sprintf('%0.2f', $timeDiff) . " detik");
+        Log::info("Create Jobs Update Chapter -- " . sprintf('%0.2f', $timeDiff) . " detik");
 
         // // inisialisasi
         // $chapters       = [];

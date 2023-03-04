@@ -41,7 +41,7 @@ class UpdateChapterJob implements ShouldQueue
     {
         $mangaName = $this->mangaName;
 
-        Log::info('START UPDATE CHAPTER - ' . strtoupper($mangaName));
+        // Log::info('START UPDATE CHAPTER - ' . strtoupper($mangaName));
         $startTime = microtime(true);
 
         // inisialisasi
@@ -131,6 +131,6 @@ class UpdateChapterJob implements ShouldQueue
         $endTime = microtime(true);
         $timeDiff = $endTime - $startTime;
 
-        Log::info("Chapter Update Done -- " . sprintf('%0.2f', $timeDiff) . " detik - " . $mangaName);
+        // Log::info("Chapter Update Done -- " . sprintf('%0.2f', $timeDiff) . " detik - " . $mangaName);
     }
 }
