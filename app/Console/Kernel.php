@@ -17,7 +17,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('rilisanterbaru:cron')->everyFiveMinutes();
-        $schedule->command('updatechapter:cron')->everyFiveMinutes();
+        $schedule->command('updatechapter:cron')->everyTenMinutes();
         //$schedule->command('uploadimage:cron')->everyMinute();
     }
 
