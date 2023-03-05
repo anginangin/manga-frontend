@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Web;
 use App\Models\Manga;
 use App\Models\Banner;
+use App\Models\Chapter;
 use App\Models\Rating;
 use App\Models\Slider;
 use App\Models\Recommend;
@@ -16,31 +17,35 @@ class HomepageController extends Controller
     public function index()
     {
         $dailyViews     = DB::table('manga')
-                            ->select('poster', 'thumbnail', 'title', 'slug', 'genre', DB::raw('sum(if(date(manga_view.created_at) = curdate(), 1, 0)) as today_count'))
-                            ->leftJoin('manga_view', 'manga_view.manga_id', '=', 'manga.id')
-                            ->orderBy('today_count', 'desc')
-                            ->groupBy('manga.id')
-                            ->take(10)
-                            ->get();
+            ->select('poster', 'thumbnail', 'title', 'slug', 'genre', DB::raw('sum(if(date(manga_view.created_at) = curdate(), 1, 0)) as today_count'))
+            ->leftJoin('manga_view', 'manga_view.manga_id', '=', 'manga.id')
+            ->orderBy('today_count', 'desc')
+            ->groupBy('manga.id')
+            ->take(10)
+            ->get();
         $weeklyViews    = DB::table('manga')
-                            ->select('poster', 'thumbnail', 'title', 'slug', 'genre', DB::raw('sum(if(date(manga_view.created_at) >= curdate() - interval 1 week, 1, 0)) as this_week'))
-                            ->leftJoin('manga_view', 'manga_view.manga_id', '=', 'manga.id')
-                            ->orderBy('this_week', 'desc')
-                            ->groupBy('manga.id')
-                            ->take(10)
-                            ->get();
+            ->select('poster', 'thumbnail', 'title', 'slug', 'genre', DB::raw('sum(if(date(manga_view.created_at) >= curdate() - interval 1 week, 1, 0)) as this_week'))
+            ->leftJoin('manga_view', 'manga_view.manga_id', '=', 'manga.id')
+            ->orderBy('this_week', 'desc')
+            ->groupBy('manga.id')
+            ->take(10)
+            ->get();
         $monthlyViews   = DB::table('manga')
-                            ->select('poster', 'thumbnail', 'title', 'slug', 'genre', DB::raw('sum(if(date(manga_view.created_at) >= curdate() - interval 1 month, 1, 0)) as this_month'))
-                            ->leftJoin('manga_view', 'manga_view.manga_id', '=', 'manga.id')
-                            ->orderBy('this_month', 'desc')
-                            ->groupBy('manga.id')
-                            ->take(10)
-                            ->get();
+            ->select('poster', 'thumbnail', 'title', 'slug', 'genre', DB::raw('sum(if(date(manga_view.created_at) >= curdate() - interval 1 month, 1, 0)) as this_month'))
+            ->leftJoin('manga_view', 'manga_view.manga_id', '=', 'manga.id')
+            ->orderBy('this_month', 'desc')
+            ->groupBy('manga.id')
+            ->take(10)
+            ->get();
 
         $webSetting         = Web::first();
 
-        $latestUpdate       = Manga::with('chapters')->where('is_blacklist', 0)->orderBy('id','desc')->paginate(10);
-
+        $latestUpdate       = Manga::with('chapters')
+            ->join('manga_chapter', 'manga.id', '=', 'manga_chapter.manga_id')
+            ->select('manga.*')
+            ->orderBy('manga_chapter.id', 'DESC')
+            ->groupBy('manga_chapter.manga_id')
+            ->paginate(10);
         //$recommended        = Manga::with('chapters')->inRandomOrder()->take(25)->get();
         $trendings          = Trending::with('manga')->orderBy('urutan')->take(25)->get();
         $recommended        = Recommend::with('manga')->orderBy('urutan')->take(25)->get();
@@ -73,10 +78,10 @@ class HomepageController extends Controller
         } else {
             $ratingValue = 'N/A';
         }
-        
+
         if (count($latestUpdate) > 0) {
-            return view('homepage', compact('webSetting', 'latestUpdate', 'fixGenre', 'dailyViews', 'weeklyViews', 'monthlyViews','trendings', 'recommended','sliders','ratingValue','bannerTengah','bannerRekomendasi','bannerAtasMaPop','bannerBawahMaPop'));
-        }else{
+            return view('homepage', compact('webSetting', 'latestUpdate', 'fixGenre', 'dailyViews', 'weeklyViews', 'monthlyViews', 'trendings', 'recommended', 'sliders', 'ratingValue', 'bannerTengah', 'bannerRekomendasi', 'bannerAtasMaPop', 'bannerBawahMaPop'));
+        } else {
             return view('blank_page');
         }
     }
