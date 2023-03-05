@@ -42,9 +42,9 @@ class HomepageController extends Controller
 
         $latestUpdate       = Manga::with('chapters')
             ->join('manga_chapter', 'manga.id', '=', 'manga_chapter.manga_id')
-            ->select('manga.*')
-            ->orderBy('manga_chapter.id', 'DESC')
-            ->groupBy('manga_chapter.manga_id')
+            ->select('manga.*', DB::raw('MAX(manga_chapter.id) AS latest_chapter'))
+            ->groupby('manga_chapter.manga_id')
+            ->orderBy('latest_chapter','DESC')
             ->paginate(10);
         //$recommended        = Manga::with('chapters')->inRandomOrder()->take(25)->get();
         $trendings          = Trending::with('manga')->orderBy('urutan')->take(25)->get();
