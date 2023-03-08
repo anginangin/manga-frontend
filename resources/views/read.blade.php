@@ -188,7 +188,7 @@
                     @if ($chapter['domain'] == config('constant.url.komiktap'))
                     @foreach ($image as $key => $image)
                     @if(strpos($image, '.jpg') == TRUE || strpos($image, '.png') == TRUE || strpos($image, '.jpeg') ==
-                    TRUE || strpos($image, '.webp') == TRUE) {
+                    TRUE || strpos($image, '.webp') == TRUE)
                     <img class="img-fluid" src="{{ $image }}" />
                     @endif
                     @endforeach

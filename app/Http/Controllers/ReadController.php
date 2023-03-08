@@ -30,12 +30,13 @@ class ReadController extends Controller
                 $str_start = substr($stringArr[6], 14);
                 $str_end = str_replace(");", "", $str_start);
                 $str_str = str_replace("/", "", $str_end);
-                $str_a = str_replace("{", "", $str_str);
-                $str_b = str_replace("}", "", $str_a);
+                $str_a = str_replace("{", " ", $str_str);
+                $str_b = str_replace("}", " ", $str_a);
                 $str_c = str_replace('"', '', $str_b);
                 $str_d = str_replace('images:[', '', $str_c);
                 $str_e = str_replace(']]', '', $str_d);
-                $final = explode(",", $str_e);
+                $str_f = str_replace('] ]', '', $str_e);
+                $final = explode(",", $str_f);
                 $image = $final;
             } catch (\Throwable $th) {
                 return view('error_page');
