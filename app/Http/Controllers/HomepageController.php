@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Web;
 use App\Models\Manga;
-use App\Models\TItle;
+use App\Models\Title;
 use App\Models\Banner;
 use App\Models\Rating;
 use App\Models\Slider;
@@ -52,7 +52,7 @@ class HomepageController extends Controller
         //$recommended        = Manga::with('chapters')->inRandomOrder()->take(25)->get();
 
         // most view
-        if (TItle::first()->is_most_view == 1) {
+        if (Title::first()->is_most_view == 1) {
             $trendings     = MangaView::with('manga')->select('manga_id', DB::raw('count(manga_id) as total'))
                 ->groupBy('manga_id')
                 ->orderBy('total', 'DESC')
@@ -62,7 +62,7 @@ class HomepageController extends Controller
         }
 
         // rating
-        if (TItle::first()->is_most_rating == 1) {
+        if (Title::first()->is_most_rating == 1) {
             $sliders             = Rating::with('manga')->select('manga_id', DB::raw('AVG(rating) as rating'))->groupBy('manga_id')->orderBy('rating', 'DESC')->paginate(20);
         } else {
             $sliders            = Slider::with('manga')->orderBy('urutan')->take(20)->get();
