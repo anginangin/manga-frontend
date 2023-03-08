@@ -27,7 +27,7 @@ class ReadController extends Controller
             try {
                 $image = file_get_contents($chapter['domain'] . $chapter['path']);
                 $stringArr = explode("<script>", $image);
-                $str_start = substr($stringArr[7], 14);
+                $str_start = substr($stringArr[6], 14);
                 $str_end = str_replace(");", "", $str_start);
                 $str_str = str_replace("/", "", $str_end);
                 $str_a = str_replace("{", "", $str_str);
@@ -44,7 +44,6 @@ class ReadController extends Controller
             $client = new Client(HttpClient::create(["verify_peer" => false, "verify_host" => false]));
             $url = $chapter['domain'] . $chapter['path'];
             $page = $client->request('GET', $url);
-
             $this->image['title'] = $page->filter('.headpost h1')->text();
             $this->image['image'] = $page->filter('#readerarea')->filter('img')->each(function ($img) {
                 return $img->filter('img')->attr('src');
