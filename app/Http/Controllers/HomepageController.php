@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Web;
 use App\Models\Manga;
+use App\Models\TItle;
 use App\Models\Banner;
-use App\Models\Chapter;
 use App\Models\Rating;
 use App\Models\Slider;
-use App\Models\Recommend;
+use App\Models\Chapter;
+use App\Models\MangaView;
 use App\Models\Trending;
+use App\Models\Recommend;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 
 class HomepageController extends Controller
 {
@@ -44,14 +47,30 @@ class HomepageController extends Controller
             ->join('manga_chapter', 'manga.id', '=', 'manga_chapter.manga_id')
             ->select('manga.*', DB::raw('MAX(manga_chapter.id) AS latest_chapter'))
             ->groupby('manga_chapter.manga_id')
-            ->orderBy('latest_chapter','DESC')
-            ->paginate(10);
+            ->orderBy('latest_chapter', 'DESC')
+            ->paginate(20);
         //$recommended        = Manga::with('chapters')->inRandomOrder()->take(25)->get();
-        $trendings          = Trending::with('manga')->orderBy('urutan')->take(25)->get();
-        $recommended        = Recommend::with('manga')->orderBy('urutan')->take(25)->get();
-        $sliders            = Slider::with('manga')->orderBy('urutan')->take(25)->get();
 
-        $rating             = Rating::groupBy('manga_id')->get();
+        // most view
+        if (TItle::first()->is_most_view == 1) {
+            $trendings     = MangaView::with('manga')->select('manga_id', DB::raw('count(manga_id) as total'))
+                ->groupBy('manga_id')
+                ->orderBy('total', 'DESC')
+                ->paginate(20);
+        } else {
+            $trendings          = Trending::with('manga')->orderBy('urutan')->take(20)->get();
+        }
+
+        // rating
+        if (TItle::first()->is_most_rating == 1) {
+            $sliders             = Rating::with('manga')->select('manga_id', DB::raw('AVG(rating) as rating'))->groupBy('manga_id')->orderBy('rating', 'DESC')->paginate(20);
+        } else {
+            $sliders            = Slider::with('manga')->orderBy('urutan')->take(20)->get();
+        }
+
+        $recommended        = Recommend::with('manga')->orderBy('urutan')->take(25)->get();
+
+
 
         $bannerTengah       = Banner::where(['posisi' => 'Tengah', 'status' => 0])->get();
 
@@ -68,6 +87,9 @@ class HomepageController extends Controller
                 $fixGenre = array_unique($arrGenre);
             }
         }
+
+        $rating             = Rating::groupBy('manga_id')->get();
+
 
         if (count($rating) > 0) {
             $value = 0;

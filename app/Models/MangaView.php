@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Rating extends Model
+class MangaView extends Model
 {
-    protected $table = 'rating';
+    protected $table = 'manga_view';
     protected $guarded = [];
     use HasFactory;
 
