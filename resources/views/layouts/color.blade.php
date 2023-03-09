@@ -9901,6 +9901,9 @@
         .block_area .block_area-header .cat-heading {
             font-size: 20px !important;
         }
+        .block_area-content .bah-heading .cat-heading {
+            font-size: 20px !important;
+        }
 
         .article-infor {
             font-size: 1em;
