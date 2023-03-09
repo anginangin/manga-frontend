@@ -29,9 +29,19 @@
     @include('includes.style')
     @stack('addon-style')
     @include('layouts.color')
+    @foreach (App\Models\Adds::where('posisi', 'HEADER')->get() as $adds)
+        @if ($adds->status == 0)
+            {!! $adds->script !!}
+        @endif
+    @endforeach
 </head>
 
 <body>
+    @foreach (App\Models\Adds::where('posisi', 'BODY')->get() as $adds)
+        @if ($adds->status == 0)
+            {!! $adds->script !!}
+        @endif
+    @endforeach
     @include('includes.sidebar')
 
     <div id="wrapper">

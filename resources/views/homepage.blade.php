@@ -102,31 +102,6 @@
                 <div class="trending-list" id="trending-home" style="display: none">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            {{-- @foreach ($dailyViews as $trending)
-                            @if ($trending->today_count != 0)
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="manga-poster">
-                                        <a class="link-mask" href="{{ route('detail', str_replace('/manga/','',$trending->slug)) }}"></a>
-                                            <img
-                                                src="{{
-                                                    (!$trending->thumbnail)
-                                                    ? $trending->poster
-                                                    : config('constant.url.api_image').$trending->thumbnail
-                                                }}"
-                                                class="manga-poster-img lazyload"
-                                                alt="{{ $trending->title }}"
-                                            />
-                                    </div>
-                                    <div class="number">
-                                        <span>{{ $loop->iteration }}</span>
-                                        <div class="anime-name">{{ substr($trending->title,0,25). '...' }}</div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            @endif
-                            @endforeach --}}
 
                             @foreach ($trendings as $trending)
                             <div class="swiper-slide">
@@ -189,7 +164,7 @@
 <!-- GENRE -->
 
 
-<div id="manga-featured">
+{{-- <div id="manga-featured">
     <div class="container">
         <section class="block_area block_area_featured">
             <div class="block_area-header">
@@ -256,7 +231,7 @@
             </div>
         </section>
     </div>
-</div>
+</div> --}}
 
 <div id="main-wrapper">
     <div class="container">
@@ -428,15 +403,16 @@
             <br><br>
 
             <section class="block_area block_area_featured" style="position: initial">
-                <div class="block_area-header">
-                    <div class="bah-heading">
-                        <h2 class="cat-heading">
-                            {{ App\Models\Title::select('rekomendasi')->first()->rekomendasi }}
-                        </h2>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
+
                 <div class="block_area-content">
+                    <div class="block_area-header">
+                        <div class="bah-heading">
+                            <h2 class="cat-heading">
+                                {{ App\Models\Title::select('rekomendasi')->first()->rekomendasi }}
+                            </h2>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
                     <div class="featured-list" id="featured-04">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">

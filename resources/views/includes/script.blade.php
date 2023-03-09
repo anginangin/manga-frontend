@@ -1,13 +1,8 @@
-@foreach (App\Models\Adds::get() as $adds)
-    @if ($adds->status == 0)
-        {!! $adds->script !!}         
-    @endif
-@endforeach
 <script src="https://www.google.com/recaptcha/api.js?render=6LfQbGQcAAAAAL1I4ef6T7XEuPi19tYPVtaotny9&hl=en"></script>
 <script type="text/javascript" src="https://mangareader.to/js/app.min.js?v=2.1"></script>
 <script>
     var     uiMode = localStorage.getItem("uiMode");
-    const   body = document.body, 
+    const   body = document.body,
             btnMode = document.getElementById("toggle-mode"),
             sbBtnMode = document.getElementById("sb-toggle-mode");
 
@@ -22,10 +17,10 @@
             body.classList.remove("darkmode");
         }
     }
-    
-    if (uiMode) { 
+
+    if (uiMode) {
         activeUiMode();
-    } 
+    }
     else {
         window.matchMedia("(prefers-color-scheme: dark)").matches ? (uiMode = "dark") : (uiMode = "light");
         activeUiMode();
@@ -70,7 +65,7 @@
         }
         gtag("js", new Date());
         gtag("config", "UA-207641274-1");
-        
+
         var vitag = vitag || {};
         vitag.outStreamConfig = { version: "v1" };
 </script>
