@@ -405,13 +405,13 @@
             <section class="block_area block_area_featured" style="position: initial">
 
                 <div class="block_area-content">
-                    <div class="bah-heading">
-                        <h2 class="cat-heading">
-                            {{ App\Models\Title::select('rekomendasi')->first()->rekomendasi }}
-                        </h2>
-                    </div>
-                    <div class="block_area-header">
 
+                    <div class="block_area-header">
+                        <div class="bah-heading">
+                            <h2 class="cat-heading">
+                                {{ App\Models\Title::select('rekomendasi')->first()->rekomendasi }}
+                            </h2>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                     <div class="featured-list" id="featured-04">
