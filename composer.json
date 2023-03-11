@@ -18,6 +18,7 @@
         "laravelista/comments": "^4.5",
         "league/flysystem-sftp": "*",
         "nagy/laravel-rating": "^2.2",
+        "pusher/pusher-php-server": "~4.0",
         "weidner/goutte": "^2.0"
     },
     "require-dev": {
