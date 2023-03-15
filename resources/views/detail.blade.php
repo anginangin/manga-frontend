@@ -18,13 +18,13 @@
             <div class="anis-content">
                 <div class="anisc-poster">
                     <div class="manga-poster">
-                        <img 
-                            src="{{ 
+                        <img
+                            src="{{
                                 (!$detailManga['thumbnail'])
                                 ? $detailManga['poster']
-                                : config('constant.url.api_image').$detailManga['thumbnail'] 
+                                : config('constant.url.api_image').$detailManga['thumbnail']
                             }}"
-                            class="manga-poster-img" 
+                            class="manga-poster-img"
                             alt="{{ $detailManga['title'] }}
                         ">
                     </div>
@@ -49,7 +49,7 @@
                             <span class="text-dark">Read Now</span>
                         </a>
                         <div class="dr-fav" id="reading-list-info">
-                            @if (Auth::check())    
+                            @if (Auth::check())
                             @if (App\Models\Bookmark::where(['manga_id' => $detailManga['id'], 'user_id' => auth()->user()->id])->exists())
                             <form>
                                 @csrf
@@ -117,7 +117,7 @@
                                 @foreach ($tables as $table)
                                 <div class="item item-title">
                                     <span>
-                                        @if ($table->value)    
+                                        @if ($table->value)
                                             @if ($detailManga->chapters[0]->domain == config('constant.url.komikstation'))
                                                 {{ ($table->key != 'Posted By:') ? $table->value : ''}}
                                             @else
@@ -216,7 +216,7 @@
                                                         </span>
                                                     </div>
                                                     @else
-                                                    <div class="form-group" id="rating-ability-wrapper">          
+                                                    <div class="form-group" id="rating-ability-wrapper">
                                                         <span class="btnrating btn btn-default btn-sm p-0 mr-2" style="cursor: default">
                                                             <i class="fa fa-star text-warning" aria-hidden="true"></i>
                                                         </span>
@@ -234,7 +234,7 @@
                                                         </span>
                                                     </div>
                                                 @endif
-                                            @else    
+                                            @else
                                                     <form>
                                                         <div class="form-group" id="rating-ability-wrapper">
                                                             <input type="hidden" id="manga_id" name="manga_id" value="{{ $detailManga['id'] }}">
@@ -258,7 +258,7 @@
                                                         </div>
                                                     </form>
                                                 </div>
-                                            @endif    
+                                            @endif
                                         @else
                                         <div class="form-group" id="rating-ability-wrapper">
                                             <a href="{{ route('sign-in') }}" class="btn btn-default btn-sm" data-attr="1" id="rating-star-1" disabled>
@@ -375,19 +375,20 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
+                    @if (!empty($relatedManga))
                     <div class="manga_list-sbs">
                         <div class="mls-wrap">
                             @foreach ($relatedManga as $relatedManga)
                             <div class="item item-spc">
                                 <a class="manga-poster" href="{{ route('detail', $relatedManga['slug']) }}">
-                                    <img 
-                                        src="{{ 
+                                    <img
+                                        src="{{
                                             (!$relatedManga['thumbnail'])
                                             ? $relatedManga['poster']
-                                            : config('constant.url.api_image').$relatedManga['thumbnail'] 
+                                            : config('constant.url.api_image').$relatedManga['thumbnail']
                                         }}"
-                                        class="manga-poster-img lazyload" 
-                                        alt="{{ $relatedManga['title'] }}" 
+                                        class="manga-poster-img lazyload"
+                                        alt="{{ $relatedManga['title'] }}"
                                     />
                                 </a>
                                 <div class="manga-detail">
@@ -435,6 +436,7 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
+                    @endif
                     <div class="card" style="background: {{ $setTheme->secondary_base_color }} !important;color: {{ $setTheme->text_color }}">
                         <div class="card-header">
                             @php $komen = DB::table('comments')->where('commentable_id', $detailManga['id'])->get() @endphp
@@ -456,11 +458,11 @@
     $(document).ready(function(){
         $('#unbookmark').click(function(e) {
             e.preventDefault();
-        
+
             var manga_id = $('#manga_id').val();
             var user_id = $('#user_id').val();
             let token = $("meta[name='csrf-token']").attr("content");
-        
+
             $.ajax({
                 url: `/user/unbookmark`,
                 type: "POST",
@@ -484,11 +486,11 @@
 
         $('#bookmark').click(function(e) {
             e.preventDefault();
-        
+
             var manga_id = $('#manga_id').val();
             var user_id = $('#user_id').val();
             let token = $("meta[name='csrf-token']").attr("content");
-        
+
             $.ajax({
                 url: `/user/bookmark`,
                 type: "POST",
@@ -542,14 +544,14 @@
             $("#selected_rating").val(selected_value);
             $(".selected-rating").empty();
             $(".selected-rating").html(selected_value);
-            for (i = 1; i <= selected_value; ++i) { 
+            for (i = 1; i <= selected_value; ++i) {
                 $("#rating-star-"+i).toggleClass('text-warning');
-                $("#rating-star-"+i).toggleClass('btn-default'); 
+                $("#rating-star-"+i).toggleClass('btn-default');
             }
             for (ix=1; ix <=previous_value; ++ix) {
-                $("#rating-star-"+ix).toggleClass('text-warning'); $("#rating-star-"+ix).toggleClass('btn-default'); 
-            } 
-        })); 
+                $("#rating-star-"+ix).toggleClass('text-warning'); $("#rating-star-"+ix).toggleClass('btn-default');
+            }
+        }));
     });
 </script>
 @endsection
