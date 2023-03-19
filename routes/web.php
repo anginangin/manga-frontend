@@ -1,19 +1,20 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AZListController;
-use App\Http\Controllers\DetailController;
-use App\Http\Controllers\GenreController;
-use App\Http\Controllers\HomepageController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\MangaListController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ReadController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\AZListController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\MangaListController;
 
-Route::get('shell-exec', function() {
+Route::get('shell-exec', function () {
     chdir('..');
     shell_exec('php artisan queue:work --stop-when-empty >> /dev/null 2>/dev/null &');
 });
@@ -73,3 +74,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/read/{slug}', [ReadController::class, 'index'])->name('read');
 
 Route::get('/pages/{slug}', [PageController::class, 'index'])->name('pages');
+
+
+Route::get('sitemap.xml', [SitemapController::class, 'index']);
