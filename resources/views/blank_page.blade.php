@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', '404')
 @section('content')
 <style>
     body {

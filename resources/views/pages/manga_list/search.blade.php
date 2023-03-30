@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div class="prebreadcrumb">
     <div class="container">
@@ -22,7 +23,7 @@
                     <div class="block_area-header">
                         <div class="bah-heading float-left">
                             <h2 class="cat-heading">
-                                Hasil Pencarian: <i>{{ app('request')->input('keyword') }}</i> 
+                                Hasil Pencarian: <i>{{ app('request')->input('keyword') }}</i>
                             </h2>
                         </div>
                         <div class="clearfix"></div>
@@ -32,13 +33,13 @@
                             @foreach ($manga as $key => $data)
                             <div class="item item-spc">
                                 <a class="manga-poster" href="{{ route('detail', $data['slug']) }}">
-                                    <img 
-                                        src="{{ 
+                                    <img
+                                        src="{{
                                             (!$data['thumbnail'])
                                             ? $data['poster']
-                                            : config('constant.url.api_image').$data['thumbnail'] 
+                                            : config('constant.url.api_image').$data['thumbnail']
                                         }}"
-                                        class="manga-poster-img lazyload" 
+                                        class="manga-poster-img lazyload"
                                         alt="{{ $data['title'] }}"
                                     >
                                 </a>

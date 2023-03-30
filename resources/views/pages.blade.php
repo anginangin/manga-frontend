@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
     <style>
         body {

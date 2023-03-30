@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div id="main-wrapper">
     <div class="container">

@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div id="main-wrapper">
     <div class="container">
@@ -13,7 +14,7 @@
                     </div>
                     <div class="manga_list-sbs" id="manga-bookmarked">
                         <div class="mls-wrap">
-                            @foreach ($bookmark as $manga)    
+                            @foreach ($bookmark as $manga)
                                 <div class="item item-spc">
                                     <div class="dr-fav">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-circle btn-light btn-fav">
@@ -32,11 +33,11 @@
                                                 $(document).ready(function(){
                                                     $("#removeBookmark{{ $manga['id'] }}").click(function(e) {
                                                         e.preventDefault();
-                                            
+
                                                         var manga_id = $("#manga_id{{ $manga['id'] }}").val();
                                                         var user_id = $("#user_id{{ auth()->user()->id }}").val();
                                                         let token = $("meta[name='csrf-token']").attr("content");
-                                                    
+
                                                         $.ajax({
                                                             url: `/user/unbookmark`,
                                                             type: "POST",
@@ -62,10 +63,10 @@
                                         </div>
                                     </div>
                                     <a class="manga-poster" href="{{ route('detail', $manga['slug']) }}">
-                                        <img src="{{ 
+                                        <img src="{{
                                             (!$manga['thumbnail'])
                                             ? $manga['poster']
-                                            : config('constant.url.api_image').$manga['thumbnail'] 
+                                            : config('constant.url.api_image').$manga['thumbnail']
                                         }}" class="manga-poster-img lazyload" alt="{{ $manga['title'] }}" />
                                     </a>
                                     <div class="manga-detail">
@@ -113,7 +114,7 @@
                         </div>
                         <div class="pre-pagination mt-4">
                             <nav aria-label="Page navigation">
-                            
+
                             </nav>
                         </div>
                     </div>

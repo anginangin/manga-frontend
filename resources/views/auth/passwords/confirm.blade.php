@@ -1,5 +1,5 @@
 @extends('layouts.web')
-
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

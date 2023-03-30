@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div class="prebreadcrumb">
     <div class="container">
@@ -70,13 +71,13 @@
                             @forelse ($data as $key => $azlist)
                             <div class="item item-spc">
                                 <a class="manga-poster" href="{{ route('detail', $azlist['slug']) }}">
-                                    <img 
-                                        src="{{ 
+                                    <img
+                                        src="{{
                                             (!$azlist['thumbnail'])
                                             ? $azlist['poster']
-                                            : config('constant.url.api_image').$azlist['thumbnail'] 
+                                            : config('constant.url.api_image').$azlist['thumbnail']
                                         }}"
-                                        class="manga-poster-img lazyload" 
+                                        class="manga-poster-img lazyload"
                                         alt="{{ $azlist['title'] }}"
                                     >
                                 </a>

@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div id="main-wrapper">
     <div class="container">
@@ -21,7 +22,7 @@
                                         @csrf
                                         <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                         <button type="submit" class="btn btn-sm btn-blank notify-seen-all" style="font-size: 12px;"><i class="fas fa-check mr-1"></i>
-                                            Tandai semua telah dibaca 
+                                            Tandai semua telah dibaca
                                         </button>
                                     </form>
                                 </div>
@@ -46,7 +47,7 @@
                                                             Lihat
                                                         </a>
                                                     </td>
-                                                </a>    
+                                                </a>
                                             </tr>
                                             @else
                                             <tr class="text-muted">
@@ -62,7 +63,7 @@
                                                     </a>
                                                 </td>
                                             </tr>
-                                            @endif    
+                                            @endif
                                             @empty
                                                 <tr>
                                                     <td colspan="3" class="text-white text-center">Tidak ada notifikasi</td>

@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div id="main-wrapper">
     <div class="container">
@@ -17,7 +18,7 @@
                         <form class="preform preform-center" method="post" action="{{ route('change_avatar') }}" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
-                            @if ($errors->all())    
+                            @if ($errors->all())
                             <div class="alert alert-danger">
                                 <ul>
                                     @foreach ($errors->all() as $error)
@@ -128,7 +129,7 @@
             $('#upload-photo').on('change', function(e) {
                 const image = document.querySelector('#upload-photo');
                 const imagePreview = document.querySelector('.img-preview');
-                
+
                 const oFReader = new FileReader();
                 oFReader.readAsDataURL(image.files[0]);
                 oFReader.onload = function(oFREvent) {

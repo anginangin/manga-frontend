@@ -1,4 +1,5 @@
 @extends('layouts.web')
+@section('title', App\Models\SEO::select('title')->first()->title)
 @section('content')
 <div class="prebreadcrumb">
     <div class="container">
@@ -40,12 +41,12 @@
                             @forelse ($image_mode as $key => $data)
                             <div class="item item-spc">
                                 <a class="manga-poster" href="{{ route('detail', $data['slug']) }}">
-                                    <img 
-                                        src="{{ 
+                                    <img
+                                        src="{{
                                             (!$data['thumbnail'])
                                             ? $data['poster']
                                             : config('constant.url.api_image').$data['thumbnail'] }}"
-                                        class="manga-poster-img lazyload" 
+                                        class="manga-poster-img lazyload"
                                         alt="{{ $data['title'] }}"
                                     >
                                 </a>
@@ -101,7 +102,7 @@
                 </section>
                 <div class="clearfix"></div>
             </div>
-           
+
             <div id="main-sidebar">
                 <section class="block_area block_area_sidebar block_area-genres">
                     <div class="block_area-header">

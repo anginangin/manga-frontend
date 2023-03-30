@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
-    <title>{{ App\Models\SEO::select('title')->first()->title }}</title>
+    <title>@yield('title')</title>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -10,14 +10,14 @@
     <meta name="robots" content="index,follow" />
     <meta http-equiv="content-language" content="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2" />
-
+    <meta name="description" content="Baca @yield('title_manga') online bahasa Indonesia gratis di Mangapaws!" />
     {!! App\Models\SEO::select('meta_tag')->first()->meta_tag !!}
-
+    @yield('meta')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
+    <link rel="canonical" href="{{ url()->current() }}" />
     @php
         $web = App\Models\Web::first();
         $setTheme = \DB::table('web_setting')
@@ -34,6 +34,30 @@
             {!! $adds->script !!}
         @endif
     @endforeach
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Mangapaws",
+        "url": "https://mangapaws.com/"
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mangapaws",
+        "url": "https://mangapaws.com/",
+        "logo": "{{ config('constant.url.backend').'/logo/'.$web['logo'] }}"
+        }
+    </script>
+
+    @yield('less')
+
+
+
 </head>
 
 <body>
