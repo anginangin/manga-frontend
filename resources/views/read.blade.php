@@ -3,7 +3,7 @@
 
 <head>
     @php $web = App\Models\Web::first() @endphp
-    <title>Baca {{ $chapter->manga['title'] }} Bahasa Indonesia | Mangapaws</title>
+    <title>Baca {{ $chapter->manga['title'] }} Chapter {{ floatval($chapter['chapter']) }} Bahasa Indonesia | Mangapaws</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="index,follow" />
     <meta http-equiv="content-language" content="en" />

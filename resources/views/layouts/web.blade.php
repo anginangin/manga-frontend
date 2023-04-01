@@ -10,7 +10,7 @@
     <meta name="robots" content="index,follow" />
     <meta http-equiv="content-language" content="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2" />
-    <meta name="description" content="Baca @yield('title_manga') online bahasa Indonesia gratis di Mangapaws!" />
+    {{-- <meta name="description" content="Baca @yield('title_manga') online bahasa Indonesia gratis di Mangapaws!" /> --}}
     {!! App\Models\SEO::select('meta_tag')->first()->meta_tag !!}
     @yield('meta')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

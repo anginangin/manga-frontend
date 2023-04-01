@@ -1,6 +1,9 @@
 @extends('layouts.web')
-@section('title', 'Baca ' . $detailManga['title'] . ' Mangapaws')
+@section('title', 'Baca ' . $detailManga['title'] . ' Bahasa Indonesia | Mangapaws')
 @section('title_manga', $detailManga['title'])
+@section('meta')
+<meta name="description" content="Baca Komik {{ $detailManga['title'] }} online bahasa Indonesia gratis dan terupdate hanya di Mangapaws!" />
+@endsection
 @section('less')
     <script type="application/ld+json">
     {
