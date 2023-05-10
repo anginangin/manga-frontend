@@ -137,7 +137,7 @@
                                                 <span class="fdi-item fdi-cate">
                                                     @php $genres = json_decode($weeklyViews->genre) @endphp
                                                     @foreach ($genres as $genre)
-                                                    <a href="genre/{{ $genre->genre }}">
+                                                    <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                         {{ $genre->genre }}
                                                         @if( !$loop->last)
                                                         ,
@@ -205,7 +205,7 @@
                                                 <span class="fdi-item fdi-cate">
                                                     @php $genres = json_decode($monthlyViews->genre) @endphp
                                                     @foreach ($genres as $genre)
-                                                    <a href="genre/{{ $genre->genre }}">
+                                                    <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                         {{ $genre->genre }}
                                                         @if( !$loop->last)
                                                         ,
