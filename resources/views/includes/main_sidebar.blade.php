@@ -43,24 +43,24 @@
                                         <div class="ranking-number">
                                             <span>{{ $loop->iteration }}</span>
                                         </div>
-                                        <a 
-                                            href="{{ route('detail', str_replace('/manga/','',$dailyViews->slug)) }}" 
+                                        <a
+                                            href="{{ route('detail', str_replace('/manga/','',$dailyViews->slug)) }}"
                                             class="manga-poster"
                                         >
-                                            <img 
-                                                src="{{ 
+                                            <img
+                                                src="{{
                                                     (!$dailyViews->thumbnail)
                                                     ? $dailyViews->poster
-                                                    : config('constant.url.api_image').$dailyViews->thumbnail 
+                                                    : config('constant.url.api_image').$dailyViews->thumbnail
                                                 }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $dailyViews->title }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $dailyViews->title }}"
                                             />
                                         </a>
                                         <div class="manga-detail">
                                             <h3 class="manga-name">
-                                                <a 
-                                                    href="{{ route('detail', str_replace('/manga/','',$dailyViews->slug)) }}" 
+                                                <a
+                                                    href="{{ route('detail', str_replace('/manga/','',$dailyViews->slug)) }}"
                                                     title="{{ $dailyViews->title }}"
                                                 >
                                                     {{ $dailyViews->title }}
@@ -70,7 +70,7 @@
                                                 <span class="fdi-item fdi-cate">
                                                     @php $genres = json_decode($dailyViews->genre) @endphp
                                                     @foreach ($genres as $genre)
-                                                    <a href="genre/{{ $genre->genre }}">
+                                                    <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                         {{ $genre->genre }}
                                                         @if( !$loop->last)
                                                         ,
@@ -110,24 +110,24 @@
                                         <div class="ranking-number">
                                             <span>{{ $loop->iteration }}</span>
                                         </div>
-                                        <a 
-                                            href="{{ route('detail', str_replace('/manga/','',$weeklyViews->slug)) }}" 
+                                        <a
+                                            href="{{ route('detail', str_replace('/manga/','',$weeklyViews->slug)) }}"
                                             class="manga-poster"
                                         >
-                                            <img 
-                                                src="{{ 
+                                            <img
+                                                src="{{
                                                     (!$weeklyViews->thumbnail)
                                                     ? $weeklyViews->poster
-                                                    : config('constant.url.api_image') . $weeklyViews->thumbnail 
+                                                    : config('constant.url.api_image') . $weeklyViews->thumbnail
                                                 }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $weeklyViews->title }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $weeklyViews->title }}"
                                             />
                                         </a>
                                         <div class="manga-detail">
                                             <h3 class="manga-name">
-                                                <a 
-                                                    href="{{ route('detail', str_replace('/manga/','',$weeklyViews->slug)) }}" 
+                                                <a
+                                                    href="{{ route('detail', str_replace('/manga/','',$weeklyViews->slug)) }}"
                                                     title="{{ $weeklyViews->title }}"
                                                 >
                                                     {{ $weeklyViews->title }}
@@ -178,24 +178,24 @@
                                         <div class="ranking-number">
                                             <span>{{ $loop->iteration }}</span>
                                         </div>
-                                        <a 
-                                            href="{{ route('detail', str_replace('/manga/','',$monthlyViews->slug)) }}" 
+                                        <a
+                                            href="{{ route('detail', str_replace('/manga/','',$monthlyViews->slug)) }}"
                                             class="manga-poster"
                                         >
-                                            <img 
-                                                src="{{ 
+                                            <img
+                                                src="{{
                                                     (!$monthlyViews->thumbnail)
                                                     ? $monthlyViews->poster
-                                                    : config('constant.url.api_image') . $monthlyViews->thumbnail 
+                                                    : config('constant.url.api_image') . $monthlyViews->thumbnail
                                                 }}"
-                                                class="manga-poster-img lazyload" 
-                                                alt="{{ $monthlyViews->title }}" 
+                                                class="manga-poster-img lazyload"
+                                                alt="{{ $monthlyViews->title }}"
                                             />
                                         </a>
                                         <div class="manga-detail">
                                             <h3 class="manga-name">
-                                                <a 
-                                                    href="{{ route('detail', str_replace('/manga/','',$monthlyViews->slug)) }}" 
+                                                <a
+                                                    href="{{ route('detail', str_replace('/manga/','',$monthlyViews->slug)) }}"
                                                     title="{{ $monthlyViews->title }}"
                                                 >
                                                     {{ $monthlyViews->title }}
