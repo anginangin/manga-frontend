@@ -151,7 +151,7 @@
                         <div class="cbl-row">
                             @foreach ($fixGenre as $genre)
                                 <div class="item">
-                                    <a href="/genre/{{ $genre }}" title="{{ $genre }}">
+                                    <a href="{{ url('/') }}/genre/{{ $genre }}" title="{{ $genre }}">
                                         {{ $genre }}
                                     </a>
                                 </div>
@@ -203,7 +203,7 @@
                                         <div class="fd-infor">
                                             @php $genres = json_decode($slider->manga['genre']) @endphp
                                             @foreach (array_slice($genres, 0, 2) as $genre)
-                                            <a href="/genre/{{ $genre->genre }}">
+                                            <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                 {{ $genre->genre }}
                                                 @if (!$loop->last)
                                                 ,
@@ -329,7 +329,7 @@
                                                             <span class="fdi-item fdi-cate">
                                                                 @php $genres = json_decode($manga['genre']) @endphp
                                                                 @foreach ($genres as $genre)
-                                                                    <a href="/genre/{{ $genre->genre }}">
+                                                                    <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                                         {{ $genre->genre }}
                                                                         @if (!$loop->last)
                                                                             ,
@@ -439,7 +439,7 @@
                                                     <div class="fd-infor">
                                                         @php $genres = json_decode($recommended->manga['genre']) @endphp
                                                         @foreach (array_slice($genres, 0, 2) as $genre)
-                                                            <a href="/genre/{{ $genre->genre }}">
+                                                            <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                                 {{ $genre->genre }}
                                                                 @if (!$loop->last)
                                                                     ,

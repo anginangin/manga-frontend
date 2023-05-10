@@ -105,7 +105,7 @@
                                     <div class="cbl-row">
                                         @forelse ($arr_unique as $genre)
                                         <div class="item">
-                                            <a href="/genre/{{ $genre }}" title="{{ $genre }}">
+                                            <a href="{{ url('/') }}/genre/{{ $genre }}" title="{{ $genre }}">
                                                 {{ $genre}}
                                             </a>
                                         </div>

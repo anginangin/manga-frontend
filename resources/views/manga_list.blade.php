@@ -187,7 +187,7 @@
                                         @endphp
                                         @foreach ($genres['genres'] as $genre)
                                         <div class="item">
-                                            <a href="/genre/page/{{ $page+1 }}/{{ $genre['id'] }}"
+                                            <a href="{{ url('/') }}/genre/page/{{ $page+1 }}/{{ $genre['id'] }}"
                                                 title="{{ $genre['genre'] }}">{{ $genre['genre'] }}</a>
                                         </div>
                                         @endforeach

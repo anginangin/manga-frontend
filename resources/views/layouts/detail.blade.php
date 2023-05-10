@@ -84,139 +84,139 @@
                 <div class="sidebar_menu-sub">
                     <ul class="nav sub-menu">
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/action">Action</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/action">Action</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/adventure">Adventure</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/adventure">Adventure</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/cars">Cars</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/cars">Cars</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/comedy">Comedy</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/comedy">Comedy</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/dementia">Dementia</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/dementia">Dementia</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/demons">Demons</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/demons">Demons</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/doujinshi">Doujinshi</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/doujinshi">Doujinshi</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/drama">Drama</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/drama">Drama</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/ecchi">Ecchi</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/ecchi">Ecchi</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/fantasy">Fantasy</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/fantasy">Fantasy</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/game">Game</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/game">Game</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/gender-bender">Gender Bender</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/gender-bender">Gender Bender</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/harem">Harem</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/harem">Harem</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/hentai">Hentai</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/hentai">Hentai</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/historical">Historical</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/historical">Historical</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/horror">Horror</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/horror">Horror</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/josei">Josei</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/josei">Josei</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/kids">Kids</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/kids">Kids</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/magic">Magic</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/magic">Magic</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/martial-arts">Martial Arts</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/martial-arts">Martial Arts</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/mecha">Mecha</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/mecha">Mecha</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/military">Military</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/military">Military</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/music">Music</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/music">Music</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/mystery">Mystery</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/mystery">Mystery</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/parody">Parody</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/parody">Parody</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/police">Police</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/police">Police</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/psychological">Psychological</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/psychological">Psychological</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/romance">Romance</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/romance">Romance</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/samurai">Samurai</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/samurai">Samurai</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/school">School</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/school">School</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/scifi">Sci-Fi</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/scifi">Sci-Fi</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/seinen">Seinen</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/seinen">Seinen</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/shoujo">Shoujo</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/shoujo">Shoujo</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/shoujo-ai">Shoujo Ai</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/shoujo-ai">Shoujo Ai</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/shounen">Shounen</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/shounen">Shounen</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/shounen-ai">Shounen Ai</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/shounen-ai">Shounen Ai</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/slice-of-life">Slice of Life</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/slice-of-life">Slice of Life</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/space">Space</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/space">Space</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/sports">Sports</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/sports">Sports</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/super-power">Super Power</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/super-power">Super Power</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/supernatural">Supernatural</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/supernatural">Supernatural</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/thriller">Thriller</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/thriller">Thriller</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/vampire">Vampire</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/vampire">Vampire</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/yaoi">Yaoi</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/yaoi">Yaoi</a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="/genre/yuri">Yuri</a>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}/genre/yuri">Yuri</a>
                         </li>
 
                         <li class="nav-item nav-more">
@@ -407,23 +407,23 @@
                             <div class="sort-desc">
                                 <div class="genres">
 
-                                    <a href="/genre/action">Action</a>
+                                    <a href="{{ url('/') }}/genre/action">Action</a>
 
-                                    <a href="/genre/drama">Drama</a>
+                                    <a href="{{ url('/') }}/genre/drama">Drama</a>
 
-                                    <a href="/genre/fantasy">Fantasy</a>
+                                    <a href="{{ url('/') }}/genre/fantasy">Fantasy</a>
 
-                                    <a href="/genre/horror">Horror</a>
+                                    <a href="{{ url('/') }}/genre/horror">Horror</a>
 
-                                    <a href="/genre/military">Military</a>
+                                    <a href="{{ url('/') }}/genre/military">Military</a>
 
-                                    <a href="/genre/mystery">Mystery</a>
+                                    <a href="{{ url('/') }}/genre/mystery">Mystery</a>
 
-                                    <a href="/genre/shounen">Shounen</a>
+                                    <a href="{{ url('/') }}/genre/shounen">Shounen</a>
 
-                                    <a href="/genre/super-power">Super Power</a>
+                                    <a href="{{ url('/') }}/genre/super-power">Super Power</a>
 
-                                    <a href="/genre/supernatural">Supernatural</a>
+                                    <a href="{{ url('/') }}/genre/supernatural">Supernatural</a>
 
                                 </div>
                                 <div class="description">
@@ -6549,11 +6549,11 @@
 
                                                 <span class="fdi-item fdi-cate">
 
-                                                    <a href="/genre/action">Action</a>,
+                                                    <a href="{{ url('/') }}/genre/action">Action</a>,
 
-                                                    <a href="/genre/drama">Drama</a>,
+                                                    <a href="{{ url('/') }}/genre/drama">Drama</a>,
 
-                                                    <a href="/genre/military">Military</a>
+                                                    <a href="{{ url('/') }}/genre/military">Military</a>
 
                                                 </span>
 
@@ -6706,186 +6706,186 @@
                                             <div class="cbl-row">
 
                                                 <div class="item">
-                                                    <a href="/genre/action" title="Action">Action</a>
+                                                    <a href="{{ url('/') }}/genre/action" title="Action">Action</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/adventure" title="Adventure">Adventure</a>
+                                                    <a href="{{ url('/') }}/genre/adventure" title="Adventure">Adventure</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/cars" title="Cars">Cars</a>
+                                                    <a href="{{ url('/') }}/genre/cars" title="Cars">Cars</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/comedy" title="Comedy">Comedy</a>
+                                                    <a href="{{ url('/') }}/genre/comedy" title="Comedy">Comedy</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/dementia" title="Dementia">Dementia</a>
+                                                    <a href="{{ url('/') }}/genre/dementia" title="Dementia">Dementia</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/demons" title="Demons">Demons</a>
+                                                    <a href="{{ url('/') }}/genre/demons" title="Demons">Demons</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/doujinshi" title="Doujinshi">Doujinshi</a>
+                                                    <a href="{{ url('/') }}/genre/doujinshi" title="Doujinshi">Doujinshi</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/drama" title="Drama">Drama</a>
+                                                    <a href="{{ url('/') }}/genre/drama" title="Drama">Drama</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/ecchi" title="Ecchi">Ecchi</a>
+                                                    <a href="{{ url('/') }}/genre/ecchi" title="Ecchi">Ecchi</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/fantasy" title="Fantasy">Fantasy</a>
+                                                    <a href="{{ url('/') }}/genre/fantasy" title="Fantasy">Fantasy</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/game" title="Game">Game</a>
+                                                    <a href="{{ url('/') }}/genre/game" title="Game">Game</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/gender-bender" title="Gender Bender">Gender
+                                                    <a href="{{ url('/') }}/genre/gender-bender" title="Gender Bender">Gender
                                                         Bender</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/harem" title="Harem">Harem</a>
+                                                    <a href="{{ url('/') }}/genre/harem" title="Harem">Harem</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/hentai" title="Hentai">Hentai</a>
+                                                    <a href="{{ url('/') }}/genre/hentai" title="Hentai">Hentai</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/historical" title="Historical">Historical</a>
+                                                    <a href="{{ url('/') }}/genre/historical" title="Historical">Historical</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/horror" title="Horror">Horror</a>
+                                                    <a href="{{ url('/') }}/genre/horror" title="Horror">Horror</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/josei" title="Josei">Josei</a>
+                                                    <a href="{{ url('/') }}/genre/josei" title="Josei">Josei</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/kids" title="Kids">Kids</a>
+                                                    <a href="{{ url('/') }}/genre/kids" title="Kids">Kids</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/magic" title="Magic">Magic</a>
+                                                    <a href="{{ url('/') }}/genre/magic" title="Magic">Magic</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/martial-arts" title="Martial Arts">Martial Arts</a>
+                                                    <a href="{{ url('/') }}/genre/martial-arts" title="Martial Arts">Martial Arts</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/mecha" title="Mecha">Mecha</a>
+                                                    <a href="{{ url('/') }}/genre/mecha" title="Mecha">Mecha</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/military" title="Military">Military</a>
+                                                    <a href="{{ url('/') }}/genre/military" title="Military">Military</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/music" title="Music">Music</a>
+                                                    <a href="{{ url('/') }}/genre/music" title="Music">Music</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/mystery" title="Mystery">Mystery</a>
+                                                    <a href="{{ url('/') }}/genre/mystery" title="Mystery">Mystery</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/parody" title="Parody">Parody</a>
+                                                    <a href="{{ url('/') }}/genre/parody" title="Parody">Parody</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/police" title="Police">Police</a>
+                                                    <a href="{{ url('/') }}/genre/police" title="Police">Police</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/psychological"
+                                                    <a href="{{ url('/') }}/genre/psychological"
                                                         title="Psychological">Psychological</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/romance" title="Romance">Romance</a>
+                                                    <a href="{{ url('/') }}/genre/romance" title="Romance">Romance</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/samurai" title="Samurai">Samurai</a>
+                                                    <a href="{{ url('/') }}/genre/samurai" title="Samurai">Samurai</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/school" title="School">School</a>
+                                                    <a href="{{ url('/') }}/genre/school" title="School">School</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/scifi" title="Sci-Fi">Sci-Fi</a>
+                                                    <a href="{{ url('/') }}/genre/scifi" title="Sci-Fi">Sci-Fi</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/seinen" title="Seinen">Seinen</a>
+                                                    <a href="{{ url('/') }}/genre/seinen" title="Seinen">Seinen</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/shoujo" title="Shoujo">Shoujo</a>
+                                                    <a href="{{ url('/') }}/genre/shoujo" title="Shoujo">Shoujo</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/shoujo-ai" title="Shoujo Ai">Shoujo Ai</a>
+                                                    <a href="{{ url('/') }}/genre/shoujo-ai" title="Shoujo Ai">Shoujo Ai</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/shounen" title="Shounen">Shounen</a>
+                                                    <a href="{{ url('/') }}/genre/shounen" title="Shounen">Shounen</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/shounen-ai" title="Shounen Ai">Shounen Ai</a>
+                                                    <a href="{{ url('/') }}/genre/shounen-ai" title="Shounen Ai">Shounen Ai</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/slice-of-life" title="Slice of Life">Slice of
+                                                    <a href="{{ url('/') }}/genre/slice-of-life" title="Slice of Life">Slice of
                                                         Life</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/space" title="Space">Space</a>
+                                                    <a href="{{ url('/') }}/genre/space" title="Space">Space</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/sports" title="Sports">Sports</a>
+                                                    <a href="{{ url('/') }}/genre/sports" title="Sports">Sports</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/super-power" title="Super Power">Super Power</a>
+                                                    <a href="{{ url('/') }}/genre/super-power" title="Super Power">Super Power</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/supernatural" title="Supernatural">Supernatural</a>
+                                                    <a href="{{ url('/') }}/genre/supernatural" title="Supernatural">Supernatural</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/thriller" title="Thriller">Thriller</a>
+                                                    <a href="{{ url('/') }}/genre/thriller" title="Thriller">Thriller</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/vampire" title="Vampire">Vampire</a>
+                                                    <a href="{{ url('/') }}/genre/vampire" title="Vampire">Vampire</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/yaoi" title="Yaoi">Yaoi</a>
+                                                    <a href="{{ url('/') }}/genre/yaoi" title="Yaoi">Yaoi</a>
                                                 </div>
 
                                                 <div class="item">
-                                                    <a href="/genre/yuri" title="Yuri">Yuri</a>
+                                                    <a href="{{ url('/') }}/genre/yuri" title="Yuri">Yuri</a>
                                                 </div>
 
                                                 <div class="item item-more"><a class="im-toggle">+ More</a></div>
@@ -6931,9 +6931,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/ecchi">Ecchi</a>,
+                                                            <a href="{{ url('/') }}/genre/ecchi">Ecchi</a>,
 
-                                                            <a href="/genre/fantasy">Fantasy</a>
+                                                            <a href="{{ url('/') }}/genre/fantasy">Fantasy</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -6971,9 +6971,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/action">Action</a>,
+                                                            <a href="{{ url('/') }}/genre/action">Action</a>,
 
-                                                            <a href="/genre/demons">Demons</a>
+                                                            <a href="{{ url('/') }}/genre/demons">Demons</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -7013,9 +7013,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/fantasy">Fantasy</a>,
+                                                            <a href="{{ url('/') }}/genre/fantasy">Fantasy</a>,
 
-                                                            <a href="/genre/josei">Josei</a>
+                                                            <a href="{{ url('/') }}/genre/josei">Josei</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -7047,9 +7047,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/action">Action</a>,
+                                                            <a href="{{ url('/') }}/genre/action">Action</a>,
 
-                                                            <a href="/genre/adventure">Adventure</a>
+                                                            <a href="{{ url('/') }}/genre/adventure">Adventure</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -7079,9 +7079,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/action">Action</a>,
+                                                            <a href="{{ url('/') }}/genre/action">Action</a>,
 
-                                                            <a href="/genre/drama">Drama</a>
+                                                            <a href="{{ url('/') }}/genre/drama">Drama</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -7105,9 +7105,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/drama">Drama</a>,
+                                                            <a href="{{ url('/') }}/genre/drama">Drama</a>,
 
-                                                            <a href="/genre/shounen">Shounen</a>
+                                                            <a href="{{ url('/') }}/genre/shounen">Shounen</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -7143,9 +7143,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/fantasy">Fantasy</a>,
+                                                            <a href="{{ url('/') }}/genre/fantasy">Fantasy</a>,
 
-                                                            <a href="/genre/shounen">Shounen</a>
+                                                            <a href="{{ url('/') }}/genre/shounen">Shounen</a>
 
                                                         </span>
                                                         <div class="d-block">
@@ -7174,9 +7174,9 @@
                                                     <div class="fd-infor">
                                                         <span class="fdi-item fdi-cate">
 
-                                                            <a href="/genre/horror">Horror</a>,
+                                                            <a href="{{ url('/') }}/genre/horror">Horror</a>,
 
-                                                            <a href="/genre/supernatural">Supernatural</a>
+                                                            <a href="{{ url('/') }}/genre/supernatural">Supernatural</a>
 
                                                         </span>
                                                         <div class="d-block">

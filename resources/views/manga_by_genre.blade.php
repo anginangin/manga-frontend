@@ -154,13 +154,13 @@
                                     @endphp
                                     @if ($page > 1)
                                     <li class="page-item"><a class="page-link btn btn-sm btn-secondary"
-                                            href="/genre/page/{{ $page-1 }}/{{ $genre }}">
+                                            href="{{ url('/') }}/genre/page/{{ $page-1 }}/{{ $genre }}">
                                             < Previous</a>
                                     </li>
                                     @endif
                                     @if ($genre_count+1 == 20)
                                     <li class="page-item"><a class="page-link btn btn-sm btn-primary"
-                                            href="/genre/page/{{ $page+1 }}/{{ $genre }}">Next ></a></li>
+                                            href="{{ url('/') }}/genre/page/{{ $page+1 }}/{{ $genre }}">Next ></a></li>
                                     @endif
                                 </ul>
                             </nav>
@@ -203,7 +203,7 @@
                                         @endphp
                                         @foreach ($genres['genres'] as $genre)
                                         <div class="item">
-                                            <a href="/genre/page/{{ $page+1 }}/{{ $genre['id'] }}"
+                                            <a href="{{ url('/') }}/genre/page/{{ $page+1 }}/{{ $genre['id'] }}"
                                                 title="{{ $genre['genre'] }}">{{ $genre['genre'] }}</a>
                                         </div>
                                         @endforeach

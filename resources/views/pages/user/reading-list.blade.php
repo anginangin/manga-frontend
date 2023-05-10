@@ -79,7 +79,7 @@
                                             <span class="fdi-item fdi-cate">
                                                 @php $genres = json_decode($manga['genre']) @endphp
                                                 @foreach ($genres as $genre)
-                                                <a href="/genre/{{ $genre->genre }}">
+                                                <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                     {{ $genre->genre }}
                                                 </a>,
                                                 @endforeach

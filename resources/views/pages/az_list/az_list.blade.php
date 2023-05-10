@@ -90,7 +90,7 @@
                                     <div class="fd-infor">
                                         @php $arr = json_decode($azlist['genre']) @endphp
                                         @foreach ($arr as $genre)
-                                        <a href="/genre/{{ $genre->genre }}">
+                                        <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                             {{ $genre->genre }}
                                         </a>,
                                         @endforeach
