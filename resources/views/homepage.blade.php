@@ -113,7 +113,7 @@
                                                     <a class="link-mask"
                                                         href="{{ route('detail', str_replace('/manga/', '', $trending->manga->slug)) }}"></a>
                                                     <img src="{{ !$trending->manga->thumbnail
-                                                        ? $trending->manga->poster
+                                                        ? str_replace('i2.wp.com/', '', $trending->manga->poster)
                                                         : config('constant.url.api_image') . $trending->manga->thumbnail }}"
                                                         class="manga-poster-img lazyload"
                                                         alt="{{ $trending->manga->title }}" />

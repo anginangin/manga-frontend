@@ -117,7 +117,7 @@
                                             <img
                                                 src="{{
                                                     (!$weeklyViews->thumbnail)
-                                                    ? $weeklyViews->poster
+                                                    ? str_replace('i2.wp.com/', '', $weeklyViews->poster)
                                                     : config('constant.url.api_image') . $weeklyViews->thumbnail
                                                 }}"
                                                 class="manga-poster-img lazyload"
@@ -185,7 +185,7 @@
                                             <img
                                                 src="{{
                                                     (!$monthlyViews->thumbnail)
-                                                    ? $monthlyViews->poster
+                                                    ? str_replace('i2.wp.com/', '', $monthlyViews->poster)
                                                     : config('constant.url.api_image') . $monthlyViews->thumbnail
                                                 }}"
                                                 class="manga-poster-img lazyload"
