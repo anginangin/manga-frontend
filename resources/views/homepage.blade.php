@@ -24,12 +24,12 @@
                                 <div class="deslide-item">
                                     <a href="{{ route('detail', $slider['slug']) }}" class="deslide-cover">
                                         <img class="manga-poster-img"
-                                            src="{{ !$slider['thumbnail'] ? str_replace('i2.wp.com/', '', $slider['poster']) : config('constant.url.api_image') . $slider['thumbnail'] }}"
+                                            src="{{ !$slider['thumbnail'] ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $slider['poster']) : config('constant.url.api_image') . $slider['thumbnail'] }}"
                                             alt="{{ $slider['title'] }}" />
                                     </a>
                                     <div class="deslide-poster">
                                         <a href="{{ route('detail', $slider['slug']) }}" class="manga-poster">
-                                            <img src="{{ !$slider['thumbnail'] ? str_replace('i2.wp.com/', '', $slider['poster']) : config('constant.url.api_image') . $slider['thumbnail'] }}"
+                                            <img src="{{ !$slider['thumbnail'] ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $slider['poster']) : config('constant.url.api_image') . $slider['thumbnail'] }}"
                                                 class="manga-poster-img" alt="{{ $slider['title'] }}" />
                                         </a>
                                     </div>
@@ -113,7 +113,7 @@
                                                     <a class="link-mask"
                                                         href="{{ route('detail', str_replace('/manga/', '', $trending->manga->slug)) }}"></a>
                                                     <img src="{{ !$trending->manga->thumbnail
-                                                        ? str_replace('i2.wp.com/', '', $trending->manga->poster)
+                                                        ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $trending->manga->poster)
                                                         : config('constant.url.api_image') . $trending->manga->thumbnail }}"
                                                         class="manga-poster-img lazyload"
                                                         alt="{{ $trending->manga->title }}" />
@@ -314,7 +314,7 @@
                                                         {{-- @if ($manga['updated_at']->isToday())
                                                 <span class="tick tick-item tick-lang">NEW</span>
                                             @endif --}}
-                                                        <img src="{{ !$manga['thumbnail'] ? str_replace('i2.wp.com/', '', $manga['poster']) : config('constant.url.api_image') . $manga['thumbnail'] }}"
+                                                        <img src="{{ !$manga['thumbnail'] ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $manga['poster']) : config('constant.url.api_image') . $manga['thumbnail'] }}"
                                                             class="manga-poster-img lazyload"
                                                             alt="{{ $manga['title'] }}" />
                                                     </a>
@@ -424,7 +424,7 @@
                                                         href="{{ route('detail', str_replace('/manga/', '', $recommended->manga['slug'])) }}"></a>
                                                     <span class="tick tick-item tick-lang"></span>
                                                     <img src="{{ !$recommended->manga['thumbnail']
-                                                        ? str_replace('i2.wp.com/', '', $recommended->manga['poster'])
+                                                        ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $recommended->manga['poster'])
                                                         : config('constant.url.api_image') . $recommended->manga['thumbnail'] }}"
                                                         class="manga-poster-img lazyload"
                                                         alt="{{ $recommended->manga['title'] }}" />

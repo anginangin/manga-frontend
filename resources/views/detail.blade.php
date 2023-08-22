@@ -19,7 +19,7 @@
     "@type": "Organization",
     "name": "Mangapaws"
     },
-    "image": "{{ str_replace('i2.wp.com/', '', $detailManga['poster']) }}",
+    "image": "{{ str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $detailManga['poster']) }}",
     "description": "Baca komik {{ $detailManga['title'] }} bahasa Indonesia terbaru dan terlengkap di Mangapaws",
     "inLanguage": "Indonesian",
     "isPartOf": {
@@ -49,7 +49,7 @@
                     <div class="anisc-poster">
                         <div class="manga-poster">
                             <img src="{{ !$detailManga['thumbnail']
-                                ? str_replace('i2.wp.com/', '', $detailManga['poster'])
+                                ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $detailManga['poster'])
                                 : config('constant.url.api_image') . $detailManga['thumbnail'] }}"
                                 class="manga-poster-img" alt="{{ $detailManga['title'] }}
                         ">
@@ -488,7 +488,7 @@
                                         <div class="item item-spc">
                                             <a class="manga-poster" href="{{ route('detail', $relatedManga['slug']) }}">
                                                 <img src="{{ !$relatedManga['thumbnail']
-                                                    ? str_replace('i2.wp.com/', '', $relatedManga['poster'])
+                                                    ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $relatedManga['poster'])
                                                     : config('constant.url.api_image') . $relatedManga['thumbnail'] }}"
                                                     class="manga-poster-img lazyload"
                                                     alt="{{ $relatedManga['title'] }}" />

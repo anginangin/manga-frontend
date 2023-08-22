@@ -36,7 +36,7 @@
                                     <img
                                         src="{{
                                             (!$data['thumbnail'])
-                                            ? str_replace('i2.wp.com/', '', $data['poster'])
+                                            ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $data['poster'])
                                             : config('constant.url.api_image').$data['thumbnail']
                                         }}"
                                         class="manga-poster-img lazyload"
