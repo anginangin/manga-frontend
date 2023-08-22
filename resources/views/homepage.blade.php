@@ -424,7 +424,7 @@
                                                         href="{{ route('detail', str_replace('/manga/', '', $recommended->manga['slug'])) }}"></a>
                                                     <span class="tick tick-item tick-lang"></span>
                                                     <img src="{{ !$recommended->manga['thumbnail']
-                                                        ? $recommended->manga['poster']
+                                                        ? str_replace('i2.wp.com/', '', $recommended->manga['poster'])
                                                         : config('constant.url.api_image') . $recommended->manga['thumbnail'] }}"
                                                         class="manga-poster-img lazyload"
                                                         alt="{{ $recommended->manga['title'] }}" />
