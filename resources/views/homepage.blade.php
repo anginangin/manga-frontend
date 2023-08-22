@@ -314,7 +314,7 @@
                                                         {{-- @if ($manga['updated_at']->isToday())
                                                 <span class="tick tick-item tick-lang">NEW</span>
                                             @endif --}}
-                                                        <img src="{{ !$manga['thumbnail'] ? $manga['poster'] : config('constant.url.api_image') . $manga['thumbnail'] }}"
+                                                        <img src="{{ !$manga['thumbnail'] ? str_replace('i2.wp.com/', '', $manga['poster']) : config('constant.url.api_image') . $manga['thumbnail'] }}"
                                                             class="manga-poster-img lazyload"
                                                             alt="{{ $manga['title'] }}" />
                                                     </a>
