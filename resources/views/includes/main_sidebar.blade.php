@@ -50,7 +50,7 @@
                                             <img
                                                 src="{{
                                                     (!$dailyViews->thumbnail)
-                                                    ? $dailyViews->poster
+                                                    ? str_replace('i2.wp.com/', '', $dailyViews->poster)
                                                     : config('constant.url.api_image').$dailyViews->thumbnail
                                                 }}"
                                                 class="manga-poster-img lazyload"

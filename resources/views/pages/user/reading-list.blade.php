@@ -65,7 +65,7 @@
                                     <a class="manga-poster" href="{{ route('detail', $manga['slug']) }}">
                                         <img src="{{
                                             (!$manga['thumbnail'])
-                                            ? $manga['poster']
+                                            ? str_replace('i2.wp.com/', '', $manga['poster'])
                                             : config('constant.url.api_image').$manga['thumbnail']
                                         }}" class="manga-poster-img lazyload" alt="{{ $manga['title'] }}" />
                                     </a>
