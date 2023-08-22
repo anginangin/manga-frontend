@@ -24,12 +24,12 @@
                                 <div class="deslide-item">
                                     <a href="{{ route('detail', $slider['slug']) }}" class="deslide-cover">
                                         <img class="manga-poster-img"
-                                            src="{{ !$slider['thumbnail'] ? $slider['poster'] : config('constant.url.api_image') . $slider['thumbnail'] }}"
+                                            src="{{ !$slider['thumbnail'] ? str_replace('i2.wp.com/', '', $slider['poster']) : config('constant.url.api_image') . $slider['thumbnail'] }}"
                                             alt="{{ $slider['title'] }}" />
                                     </a>
                                     <div class="deslide-poster">
                                         <a href="{{ route('detail', $slider['slug']) }}" class="manga-poster">
-                                            <img src="{{ !$slider['thumbnail'] ? $slider['poster'] : config('constant.url.api_image') . $slider['thumbnail'] }}"
+                                            <img src="{{ !$slider['thumbnail'] ? str_replace('i2.wp.com/', '', $slider['poster']) : config('constant.url.api_image') . $slider['thumbnail'] }}"
                                                 class="manga-poster-img" alt="{{ $slider['title'] }}" />
                                         </a>
                                     </div>

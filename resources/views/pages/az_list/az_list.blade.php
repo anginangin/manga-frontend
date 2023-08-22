@@ -74,7 +74,7 @@
                                     <img
                                         src="{{
                                             (!$azlist['thumbnail'])
-                                            ? $azlist['poster']
+                                            ? str_replace('i2.wp.com/', '', $azlist['poster'])
                                             : config('constant.url.api_image').$azlist['thumbnail']
                                         }}"
                                         class="manga-poster-img lazyload"
