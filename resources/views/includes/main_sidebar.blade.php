@@ -50,7 +50,7 @@
                                             <img
                                                 src="{{
                                                     (!$dailyViews->thumbnail)
-                                                    ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $dailyViews->poster)
+                                                    ? str_replace('https://', 'https://i2.wp.com/', $dailyViews->poster)
                                                     : config('constant.url.api_image').$dailyViews->thumbnail
                                                 }}"
                                                 class="manga-poster-img lazyload"
@@ -117,7 +117,7 @@
                                             <img
                                                 src="{{
                                                     (!$weeklyViews->thumbnail)
-                                                    ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $weeklyViews->poster)
+                                                    ? str_replace('https://', 'https://i2.wp.com/', $weeklyViews->poster)
                                                     : config('constant.url.api_image') . $weeklyViews->thumbnail
                                                 }}"
                                                 class="manga-poster-img lazyload"
@@ -185,7 +185,7 @@
                                             <img
                                                 src="{{
                                                     (!$monthlyViews->thumbnail)
-                                                    ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $monthlyViews->poster)
+                                                    ? str_replace('https://', 'https://i2.wp.com/', $monthlyViews->poster)
                                                     : config('constant.url.api_image') . $monthlyViews->thumbnail
                                                 }}"
                                                 class="manga-poster-img lazyload"

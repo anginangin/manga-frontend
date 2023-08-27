@@ -71,7 +71,7 @@
                                     <img
                                         src="{{
                                             (!$azlist['thumbnail'])
-                                            ? str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $azlist['poster'])
+                                            ? str_replace('https://', 'https://i2.wp.com/', $azlist['poster'])
                                             : config('constant.url.api_image').$azlist['thumbnail']
                                         }}"
                                         class="manga-poster-img lazyload"

@@ -65,7 +65,7 @@
                             <div class="item item-spc">
                                 <a class="manga-poster"
                                     href="{{ route('detail', str_replace('/manga/','',$manga['slug']['path'])) }}">
-                                    <img src="{{ str_replace('i2.wp.com/kiryuu.id/', 'kiryuu.id/', $manga['poster']) }}"
+                                    <img src="{{ str_replace('https://', 'https://i2.wp.com/', $manga['poster']) }}"
                                         class="manga-poster-img lazyload" alt="{{ $manga['title'] }}">
                                 </a>
                                 <div class="manga-detail">
