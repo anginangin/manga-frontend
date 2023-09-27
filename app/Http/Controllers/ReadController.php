@@ -25,7 +25,7 @@ class ReadController extends Controller
 
         if ($chapter['domain'] == config('constant.url.komiktap')) {
             try {
-                $image = file_get_contents($chapter['domain'] . $chapter['path']);
+                $image = file_get_contents('https://komiktap.me' . $chapter['path']);
                 $stringArr = explode("<script>", $image);
                 $str_start = substr($stringArr[6], 14);
                 $str_end = str_replace(");", "", $str_start);
