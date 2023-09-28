@@ -23,7 +23,7 @@ class ReadController extends Controller
         $prevSlug           = Chapter::where('chapter', '<', $mangaPrevNext->chapter)->where('manga_id', $mangaPrevNext->manga_id)->orderBy('chapter', 'desc')->first();
         //$prevSlug       = Chapter::select('path')->where('id', $prev)->first();
 
-        if ($chapter['domain'] == config('constant.url.komiktap')) {
+        if ($chapter['domain'] == config('constant.url.komiktap') || $chapter['domain'] == 'https://komiktap.me') {
             try {
                 $image = file_get_contents('https://komiktap.me' . $chapter['path']);
                 $stringArr = explode("<script>", $image);

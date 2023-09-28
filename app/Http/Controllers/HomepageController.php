@@ -69,13 +69,12 @@ class HomepageController extends Controller
             $sliders            = Slider::with('manga')->orderBy('urutan')->take(20)->get();
         }
         if(!empty(Session::get('genre'))) {
-            $recommended     = Manga::where('genre', 'like', '%' . (!empty(Session::get('genre')) ? Session::get('genre')[0]->genre : '') . '%')->take(25)->get();
+            $randomIndex = array_rand(Session::get('genre'));
+            $recommended     = Manga::where('genre', 'like', '%' . (!empty(Session::get('genre')) ? Session::get('genre')[$randomIndex]->genre : '') . '%')->take(25)->inRandomOrder()  ->get();
         }else {
             $recommended     = Manga::inRandomOrder()->take(25)->get();
 
         }
-
-
 
         $bannerTengah       = Banner::where(['posisi' => 'Tengah', 'status' => 0])->get();
 
