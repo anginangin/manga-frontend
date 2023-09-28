@@ -12,6 +12,7 @@ use App\Models\Chapter;
 use App\Models\Bookmark;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class DetailController extends Controller
 {
@@ -40,6 +41,7 @@ class DetailController extends Controller
                             ->get();
         $detailManga      = Manga::with('chapters')->where('slug', $slug)->first();
         $genre            = json_decode($detailManga['genre']);
+        Session::put('genre',$genre);
         $relatedManga     = Manga::with('chapters')->where('genre', 'like', '%' . (!empty($genre) ? $genre[0]->genre : '') . '%')->take(6)->get();
         $rating           = Rating::where('manga_id', $detailManga['id'])->get();
         $setTheme         = \DB::table('web_setting')->join('theme_colors', 'theme_colors.id', '=', 'web_setting.theme_id')->first();

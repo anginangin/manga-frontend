@@ -421,23 +421,23 @@
                                             <div class="mg-item-basic">
                                                 <div class="manga-poster">
                                                     <a class="link-mask"
-                                                        href="{{ route('detail', str_replace('/manga/', '', $recommended->manga['slug'])) }}"></a>
+                                                        href="{{ route('detail', str_replace('/manga/', '', $recommended['slug'])) }}"></a>
                                                     <span class="tick tick-item tick-lang"></span>
-                                                    <img src="{{ !$recommended->manga['thumbnail']
-                                                        ? str_replace('https://', 'https://i2.wp.com/', $recommended->manga['poster'])
-                                                        : config('constant.url.api_image') . $recommended->manga['thumbnail'] }}"
+                                                    <img src="{{ !$recommended['thumbnail']
+                                                        ? str_replace('https://', 'https://i2.wp.com/', $recommended['poster'])
+                                                        : config('constant.url.api_image') . $recommended['thumbnail'] }}"
                                                         class="manga-poster-img lazyload"
-                                                        alt="{{ $recommended->manga['title'] }}" />
+                                                        alt="{{ $recommended['title'] }}" />
                                                 </div>
                                                 <div class="manga-detail">
                                                     <h3 class="manga-name">
-                                                        <a href="{{ route('detail', str_replace('/manga/', '', $recommended->manga['slug'])) }}"
-                                                            title="{{ $recommended->manga['title'] }}">
-                                                            {{ $recommended->manga['title'] }}
+                                                        <a href="{{ route('detail', str_replace('/manga/', '', $recommended['slug'])) }}"
+                                                            title="{{ $recommended['title'] }}">
+                                                            {{ $recommended['title'] }}
                                                         </a>
                                                     </h3>
                                                     <div class="fd-infor">
-                                                        @php $genres = json_decode($recommended->manga['genre']) @endphp
+                                                        @php $genres = json_decode($recommended['genre']) @endphp
                                                         @foreach (array_slice($genres, 0, 2) as $genre)
                                                             <a href="{{ url('/') }}/genre/{{ $genre->genre }}">
                                                                 {{ $genre->genre }}

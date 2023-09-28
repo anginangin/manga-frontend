@@ -9,11 +9,12 @@ use App\Models\Banner;
 use App\Models\Rating;
 use App\Models\Slider;
 use App\Models\Chapter;
-use App\Models\MangaView;
 use App\Models\Trending;
+use App\Models\MangaView;
 use App\Models\Recommend;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class HomepageController extends Controller
 {
@@ -67,8 +68,12 @@ class HomepageController extends Controller
         } else {
             $sliders            = Slider::with('manga')->orderBy('urutan')->take(20)->get();
         }
+        if(!empty(Session::get('genre'))) {
+            $recommended     = Manga::where('genre', 'like', '%' . (!empty(Session::get('genre')) ? Session::get('genre')[0]->genre : '') . '%')->take(25)->get();
+        }else {
+            $recommended     = Manga::inRandomOrder()->take(25)->get();
 
-        $recommended        = Recommend::with('manga')->orderBy('urutan')->take(25)->get();
+        }
 
 
 
