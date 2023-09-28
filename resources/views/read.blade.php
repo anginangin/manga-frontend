@@ -202,7 +202,7 @@
                     {{-- @foreach ($chapterImages as $key => $image)
                     <img class="img-fluid" src="{{ config('constant.url.api_image').$image->image }}" />
                     @endforeach --}}
-                    @if ($chapter['domain'] == config('constant.url.komiktap'))
+                    @if ($chapter['domain'] == config('constant.url.komiktap') || $chapter['domain'] == 'https://komiktap.me')
                         @foreach ($image as $key => $image)
                             @if (strpos($image, '.jpg') == true ||
                                     strpos($image, '.png') == true ||
