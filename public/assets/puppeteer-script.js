@@ -5,7 +5,10 @@ const url = process.argv[2]; // URL passed as a command line argument
 (async () => {
   const browser = await puppeteer.launch({
     headless: true, // Set to false for non-headless mode
-    args: ['--no-sandbox'],
+    executablePath: '/usr/bin/chromium-browser',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    defaultViewport: null,
+    ignoreHTTPSErrors: true
   });
   const page = await browser.newPage();
 
