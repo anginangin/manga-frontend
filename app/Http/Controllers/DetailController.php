@@ -82,6 +82,17 @@ class DetailController extends Controller
 
     public function mangajob()
     {
+        $process = new Process(['node', config('constant.path.puppeteer_two'), 'https://komiktap.me/milf-hunting-in-another-world-chapter-20/']);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new \RuntimeException($process->getErrorOutput());
+        }
+        $output = $process->getOutput();
+        dd($output);
+        $image = json_decode($output);
+        $image = $image->data;
+
         $startTime = microtime(true);
 
         // inisialisasi
@@ -114,7 +125,6 @@ class DetailController extends Controller
                     if (!$process->isSuccessful()) {
                         throw new \RuntimeException($process->getErrorOutput());
                     }
-
                     $output = $process->getOutput();
 
                     $output = json_decode($output);
