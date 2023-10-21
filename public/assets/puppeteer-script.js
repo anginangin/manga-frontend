@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('./puppeteer');
 
 const url = process.argv[2]; // URL passed as a command line argument
 
