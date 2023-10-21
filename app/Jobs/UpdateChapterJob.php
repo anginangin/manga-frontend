@@ -15,7 +15,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
-
+use Symfony\Component\Process\Process;
 class UpdateChapterJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
@@ -39,6 +39,7 @@ class UpdateChapterJob implements ShouldQueue
      */
     public function handle()
     {
+      try {
         $mangaName = $this->mangaName;
 
         // Log::info('START UPDATE CHAPTER - ' . strtoupper($mangaName));
@@ -69,16 +70,35 @@ class UpdateChapterJob implements ShouldQueue
                 //         });
                 //     }
                 // } else {
-                $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
-                    if ($i <= 2) {
-                        $data = [
-                            'cp'    => $li->filter('.chapternum')->text(),
-                            'url'   => parse_url($li->filter('a')->attr('href'))
-                        ];
-                        return $data;
-                    }
-                });
+                // $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
+                //     if ($i <= 2) {
+                //         $data = [
+                //             'cp'    => $li->filter('.chapternum')->text(),
+                //             'url'   => parse_url($li->filter('a')->attr('href'))
+                //         ];
+                //         return $data;
+                //     }
+                // });
                 // }
+
+                // new with pupetter
+                $process = new Process(['node', config('constant.path.puppeteer'), $url[$key]]);
+                $process->run();
+
+                if (!$process->isSuccessful()) {
+                    throw new \RuntimeException($process->getErrorOutput());
+                }
+
+                $output = $process->getOutput();
+                $output = json_decode($output);
+                $output = $output->data;
+                $this->information[$key]['chapters'] = [];
+                foreach($output as $value) {
+                    $this->information[$key]['chapters'][] = [
+                        'cp' => $value->cp,
+                        'url' => parse_url($value->url)
+                    ];
+                }
             }
             $informations = $this->information;
         }
@@ -132,5 +152,8 @@ class UpdateChapterJob implements ShouldQueue
         $timeDiff = $endTime - $startTime;
 
         // Log::info("Chapter Update Done -- " . sprintf('%0.2f', $timeDiff) . " detik - " . $mangaName);
+      } catch(\Exception $e) {
+            Log::info("Update Chapter Failed: ". $e);
+      }
     }
 }
