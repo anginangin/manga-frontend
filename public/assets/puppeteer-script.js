@@ -11,7 +11,6 @@ const url = process.argv[2]; // URL passed as a command line argument
 
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3');
-  await page.waitForSelector('.clstyle');
   // Evaluate JavaScript function to filter DOM elements
   const filteredData = await page.evaluate(() => {
     // Custom filtering logic, for example, selecting all <a> elements with a specific class
