@@ -26,7 +26,7 @@ class UpdateChapterCron extends Command
     {
         $startTime = microtime(true);
 
-        $manga = Manga::select('id', 'title')->where('title','MILF Hunting In Another World')->where('is_blacklist', 0)->get();
+        $manga = Manga::select('id', 'title')->where('is_blacklist', 0)->get();
         foreach ($manga as $key => $value) {
             UpdateChapterJob::dispatch($value->title);
         }
