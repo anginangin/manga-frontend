@@ -9,5 +9,6 @@ return [
     ],
     'path' => [
         'puppeteer' => env('PUPPETEER_PATH'),
+        'puppeteer_two' => env('PUPPETEER_PATH_TWO'),
     ]
 ];

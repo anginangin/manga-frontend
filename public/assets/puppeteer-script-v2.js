@@ -1,4 +1,4 @@
-const puppeteer = require('./js/puppeteer/lib/types');
+const puppeteer = require('puppeteer');
 
 const url = process.argv[2]; // URL passed as a command line argument
 
@@ -9,20 +9,10 @@ const url = process.argv[2]; // URL passed as a command line argument
   await page.goto(url, { waitUntil: 'domcontentloaded' });
 
   // Evaluate JavaScript function to filter DOM elements
-  const filteredData = await page.evaluate(() => {
-    // Custom filtering logic, for example, selecting all <a> elements with a specific class
-    const elements = Array.from(document.querySelectorAll('.clstyle li'));
-    const filteredElements = elements.map(element => {
-      return {
-        cp: element.querySelector('.chapternum').textContent,
-        url: element.querySelector('a').href
-      };
-    });
-    return filteredElements;
-  });
+  const htmlContent = await page.content();
 
   console.log(JSON.stringify({
-    data: filteredData
+    data: htmlContent
   }));
 
   await browser.close();

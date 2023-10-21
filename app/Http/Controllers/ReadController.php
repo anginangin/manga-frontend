@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Goutte\Client;
 use App\Models\Manga;
 use App\Models\Chapter;
+use App\Helpers\Scraping;
 use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Process\Process;
 use Symfony\Component\HttpClient\HttpClient;
 
 class ReadController extends Controller
@@ -25,7 +27,18 @@ class ReadController extends Controller
 
         if ($chapter['domain'] == config('constant.url.komiktap') || $chapter['domain'] == 'https://komiktap.me') {
             try {
-                $image = file_get_contents('https://komiktap.me' . $chapter['path']);
+                // $image = file_get_contents('https://komiktap.me' . $chapter['path']);
+                // $image = Scraping::curl_get_contents('https://komiktap.me' . $chapter['path']);
+                $process = new Process(['node', config('constant.path.puppeteer_two'), 'https://komiktap.me' . $chapter['path']]);
+                $process->run();
+
+                if (!$process->isSuccessful()) {
+                    throw new \RuntimeException($process->getErrorOutput());
+                }
+
+                $output = $process->getOutput();
+                $image = json_decode($output);
+                $image = $image->data;
                 $stringArr = explode("<script>", $image);
                 $str_start = substr($stringArr[6], 14);
                 $str_end = str_replace(");", "", $str_start);
@@ -39,6 +52,7 @@ class ReadController extends Controller
                 $final = explode(",", $str_f);
                 $image = $final;
             } catch (\Throwable $th) {
+                \Log::info($th);
                 return view('error_page');
             }
         } else {
