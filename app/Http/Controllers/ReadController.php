@@ -35,9 +35,9 @@ class ReadController extends Controller
                 if (!$process->isSuccessful()) {
                     throw new \RuntimeException($process->getErrorOutput());
                 }
+                dd($process->getErrorOutput());
 
                 $output = $process->getOutput();
-                \Log::info("output: ".$output);
                 $image = json_decode($output);
                 $image = $image->data;
                 $stringArr = explode("<script>", $image);
