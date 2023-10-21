@@ -37,7 +37,7 @@ class ReadController extends Controller
                 }
 
                 $output = $process->getOutput();
-                \Log::info($output);
+                \Log::info("output: ".$output);
                 $image = json_decode($output);
                 $image = $image->data;
                 $stringArr = explode("<script>", $image);
