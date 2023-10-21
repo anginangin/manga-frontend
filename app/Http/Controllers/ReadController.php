@@ -38,6 +38,7 @@ class ReadController extends Controller
 
                 $output = $process->getOutput();
                 $image = json_decode($output);
+                \Log::info($process->getErrorOutput());
                 $image = $image->data;
                 $stringArr = explode("<script>", $image);
                 $str_start = substr($stringArr[6], 14);
