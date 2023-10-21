@@ -12,6 +12,7 @@ use App\Models\Chapter;
 use App\Models\Bookmark;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Process\Process;
 use Illuminate\Support\Facades\Session;
 
 class DetailController extends Controller
@@ -87,7 +88,7 @@ class DetailController extends Controller
         $chapters       = [];
         $notifications  = [];
         $client         = new Client();
-        $manga          = Manga::select('id', 'domain', 'slug')->with('chapters')->where('is_blacklist', 0)->get();
+        $manga          = Manga::select('id', 'domain', 'slug')->with('chapters')->where('title','MILF Hunting In Another World')->where('is_blacklist', 0)->get();
 
         // scraping ambil chapter terbaru
         foreach ($manga as $key => $value) {
@@ -95,33 +96,49 @@ class DetailController extends Controller
             $url[$key]      = $value['domain'] . '/manga/' . $value['slug'];
             $node[$key]     = $client->request('GET', $url[$key]);
 
+            // Parse the JSON output
             $this->information[$key]['manga_id']        = $value['id'];
-
             if ($value['id'] == $this->information[$key]['manga_id']) {
                 if ($domain[$key] == config('constant.url.komikstation')) {
                     $this->information[$key]['chapters']    = $node[$key]->filter('.bixbox ul')->filter('li')->each(function ($li) {
                         $data = [
-                            'cp'    => $li->filter('.lchx')->text(),
-                            'url'   => parse_url($li->filter('.lchx a')->attr('href'))
+                            'cp'    => $li->filter('.eph-num')->text(),
+                            'url'   => parse_url($li->filter('.eph-num a')->attr('href'))
                         ];
                         return $data;
                     });
                 } else {
-                    $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
-                        if ($i <= 2) {
-                            $data = [
-                                'cp'    => $li->filter('.chapternum')->text(),
-                                'url'   => parse_url($li->filter('a')->attr('href'))
-                            ];
-                            return $data;
-                        }
-                    });
+                    $process = new Process(['node', config('constant.path.puppeteer'), $url[$key]]);
+                    $process->run();
+
+                    if (!$process->isSuccessful()) {
+                        throw new \RuntimeException($process->getErrorOutput());
+                    }
+
+                    $output = $process->getOutput();
+
+                    $output = json_decode($output);
+                    $output = $output->data;
+                    $this->information[$key]['chapters'] = [];
+                    foreach($output as $value) {
+                        $this->information[$key]['chapters'][] = [
+                            'cp' => $value->cp,
+                            'url' => parse_url($value->url)
+                        ];
+                    }
+                    // $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
+                    //     if ($i <= 2) {
+                    //         $data = [
+                    //             'cp'    => $li->filter('.chapternum')->text(),
+                    //             'url'   => parse_url($li->filter('a')->attr('href'))
+                    //         ];
+                    //         return $data;
+                    //     }
+                    // });
                 }
             }
             $informations = $this->information;
         }
-
-        return $informations;
 
         // tampung data chapter baru
         foreach ($informations as $value) {
@@ -143,7 +160,6 @@ class DetailController extends Controller
             }
         }
 
-        return $chapters;
 
         // insert ke database
         DB::table('manga_chapter')->insertOrIgnore($chapters);
