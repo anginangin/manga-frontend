@@ -35,7 +35,6 @@ class ReadController extends Controller
                 if (!$process->isSuccessful()) {
                     throw new \RuntimeException($process->getErrorOutput());
                 }
-                dd($process->getErrorOutput());
                 $output = $process->getOutput();
                 $image = json_decode($output);
                 $image = $image->data;
