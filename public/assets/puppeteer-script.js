@@ -10,7 +10,7 @@ const url = process.argv[2]; // URL passed as a command line argument
   const page = await browser.newPage();
 
   await page.goto(url, { waitUntil: 'domcontentloaded' });
-
+  await page.waitForSelector('body');
   // Evaluate JavaScript function to filter DOM elements
   const filteredData = await page.evaluate(() => {
     // Custom filtering logic, for example, selecting all <a> elements with a specific class
