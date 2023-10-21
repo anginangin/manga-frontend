@@ -1,9 +1,12 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('./js/puppeteer');
 
 const url = process.argv[2]; // URL passed as a command line argument
 
 (async () => {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true, // Set to false for non-headless mode
+    args: ['--no-sandbox'],
+  });
   const page = await browser.newPage();
 
   await page.goto(url, { waitUntil: 'domcontentloaded' });
