@@ -81,24 +81,37 @@ class UpdateChapterJob implements ShouldQueue
                 // });
                 // }
 
-                // new with pupetter
-                $process = new Process(['node', config('constant.path.puppeteer'), $url[$key]]);
-                $process->run();
+                if ($domain[$key] == config('constant.url.komiktap') || $domain[$key] == 'https://komiktap.me') {
+                     // new with pupetter
+                    $process = new Process(['node', config('constant.path.puppeteer'), $url[$key]]);
+                    $process->run();
 
-                if (!$process->isSuccessful()) {
-                    throw new \RuntimeException($process->getErrorOutput());
-                }
+                    if (!$process->isSuccessful()) {
+                        throw new \RuntimeException($process->getErrorOutput());
+                    }
 
-                $output = $process->getOutput();
-                $output = json_decode($output);
-                $output = $output->data;
-                $this->information[$key]['chapters'] = [];
-                foreach($output as $value) {
-                    $this->information[$key]['chapters'][] = [
-                        'cp' => $value->cp,
-                        'url' => parse_url($value->url)
-                    ];
+                    $output = $process->getOutput();
+                    $output = json_decode($output);
+                    $output = $output->data;
+                    $this->information[$key]['chapters'] = [];
+                    foreach($output as $value) {
+                        $this->information[$key]['chapters'][] = [
+                            'cp' => $value->cp,
+                            'url' => parse_url($value->url)
+                        ];
+                    }
+                } else {
+                    $this->information[$key]['chapters']    = $node[$key]->filter('.clstyle')->filter('li')->each(function ($li, $i) {
+                            if ($i <= 2) {
+                                $data = [
+                                    'cp'    => $li->filter('.chapternum')->text(),
+                                    'url'   => parse_url($li->filter('a')->attr('href'))
+                                ];
+                                return $data;
+                            }
+                        });
                 }
+               
             }
             $informations = $this->information;
         }
